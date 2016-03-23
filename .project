@@ -17,7 +17,7 @@
 	<variableList>
 		<variable>
 			<name>SQL_LOC</name>
-			<value>file:/D:/Skola/Kurser/TITE2050_Olio_ohjelmointi/olio-harjoitustyo-master/sqlite-jdbc-3.8.11.2.jar</value>
+			<value>$%7BSQL_LOC%7D</value>
 		</variable>
 	</variableList>
 </projectDescription>
