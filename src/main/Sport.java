@@ -3,7 +3,7 @@
 
 package main;
 
-public class Genre 
+public class Sport
 {
 	private String name;
 	
