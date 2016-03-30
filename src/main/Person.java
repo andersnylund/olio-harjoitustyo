@@ -5,41 +5,73 @@ package main;
 
 public class Person 
 {
-	private String lastName, firstName;
+	public static final int NAME_MAX_LENGTH = 64;
+	public static final int NAME_MIN_LENGTH = 1;
+	
+	private String lastName, firstName, gender;
 	private int age;
 	
-	public void setFirstname(String firstName)
-	{
+	public static final int MAN = 1;
+	public static final int WOMAN = 2;
+	public static final int OTHER = 3;
+	
+	private static boolean checkName(String name){
+		
+		if(name.length() < NAME_MIN_LENGTH || name.length() > NAME_MAX_LENGTH)
+			return false;
+		
+		for (int i = 0; i < name.length (); ++i)
+		{
+			int character = name.codePointAt (i);
+			if (!Character.isLetter (character) && character != '-')
+				return false;
+		}
+
+		return true;
+		
+	}
+	
+	public void setFirstname(String firstName){
 		this.firstName = firstName;
 	}
 	
 	
-	public void setLastname(String lastName)
-	{
+	public void setLastname(String lastName){
 		this.lastName = lastName;
 	}
 	
-	public void setAge(int age)
-	{
+	public void setAge(int age){
 		this.age = age;
 	}
 	
+	public void setGender(int gender){
+		switch (gender){
+		case MAN: gender = MAN; break;
+		case WOMAN: gender = WOMAN; break;
+		case OTHER: gender = OTHER; break;
+		}
+	}
+	
 	//returns the first name
-	public String getFirstname()
-	{
+	public String getFirstname(){
 		return firstName;
 	}
 	
 	//returns the last name
-	public String getLastname()
-	{
+	public String getLastname(){
 		return lastName;
 	}
 	
 	//returns the age as a integer
-	public int getAge()
-	{
+	public int getAge(){
 		return age;
+	}
+	
+	public String getGender(){
+		//NOT complete
+		//create variable gender and initialize it.
+		
+		return null;
 	}
 	
 	//returns the first and last name as a string

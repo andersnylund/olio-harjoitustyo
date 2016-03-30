@@ -5,10 +5,19 @@ package main;
 
 public class Competitor extends Person
 {	
-	//the score of one competitor
-	private int points;
 	//the competitor number, which each competitor will have
 	private int competitorNumber;
+	
+	private static int nextNumber = 1;
+	
+	public Competitor(){
+		competitorNumber = nextNumber;
+		updateNumber();
+	}
+	
+	public static void updateNumber(){
+		nextNumber++;
+	}
 	
 	//returns the competitor number
 	public int getNumber()
