@@ -9,11 +9,11 @@ public class Main
 	static private String COMPETITION_NAME;
 	static View mainView = new View();
 	
-	private Sport sport;
+	private static Sport sport;
 	
 	private League league;
 	
-	private boolean teamSport, leagueSport;
+	private static boolean teamSport, leagueSport;
 	
 	
 	public static void main(String[] args) 
@@ -46,6 +46,7 @@ public class Main
 				
 			//Add sport
 			case 2:
+				addSport();
 			
 			//Add team	
 			case 3:
@@ -67,7 +68,7 @@ public class Main
 		return COMPETITION_NAME;
 	}
 	
-	public void addSport(){
+	public static void addSport(){
 		char set;
 		//Ask the user to say if the new sport is a team sport
 		System.out.println("Is it a team sport? (Y/N)");
