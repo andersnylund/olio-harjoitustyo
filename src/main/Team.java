@@ -42,6 +42,15 @@ public class Team {
 		
 		return -1;
 	}
+	public void setScoreTeam(){
+		//adds all team members' score 
+		for(int i = 0; i < teamMembers.size(); i++)
+		{
+			scoreTeam += getMember(i).getScore();
+		}
+	}
+	
+	public double getScorTeam(){ return scoreTeam; }
 	
 	public boolean deleteMember(String lastName, String firstName){
 		int index = searchMember(lastName, firstName);
