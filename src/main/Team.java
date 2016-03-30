@@ -11,16 +11,52 @@ public class Team {
 	private String name;
 	
 	//the teams' points
-	private double points;
+	private double scoreTeam;
 	
 	//vector containing all team members
-	private Vector<Participant> participants;
+	private Vector<Participant> teamMembers;
 	
 	//the constructor
 	public Team(){
 		
-		participants = new Vector<Participant>();
+		teamMembers = new Vector<Participant>();
 	}
+	
+	public void addMember(Participant participant){
+		teamMembers.add(participant);
+	}
+	
+	
+	//search for member
+	//if member found, the method return 1
+	//else, it returns -1
+	public int searchMember(String lastName, String firstName){
+		for (int i = 0; i < teamMembers.size (); ++i)
+		{
+			Participant participant = teamMembers.get (i);
+			
+			if (participant.getLastname().equals (lastName) &&
+				participant.getFirstname().equals (firstName) )
+				return i;
+		}
+		
+		return -1;
+	}
+	
+	public boolean deleteMember(String lastName, String firstName){
+		int index = searchMember(lastName, firstName);
+		if(index < 0) return false;
+		teamMembers.remove(index);
+		return true;
+	}
+	
+	public boolean deleteMember(Participant participant){
+		return deleteMember(participant.getLastname(), participant.getFirstname());
+	}
+	
+	public int nroOfMembers(){ return teamMembers.size(); }
+	
+	public Participant getMember(int index){ return teamMembers.get(index); }
 	
 	public void setName(String name){
 		this.name = name;

@@ -8,8 +8,8 @@ public class Person
 	public static final int NAME_MAX_LENGTH = 64;
 	public static final int NAME_MIN_LENGTH = 1;
 	
-	private String lastName, firstName, gender;
-	private int age;
+	private String lastName, firstName;
+	private int age, gender;
 	
 	public static final int MAN = 1;
 	public static final int WOMAN = 2;
@@ -67,11 +67,8 @@ public class Person
 		return age;
 	}
 	
-	public String getGender(){
-		//NOT complete
-		//create variable gender and initialize it.
-		
-		return null;
+	public int getGender(){
+		return gender;
 	}
 	
 	//returns the first and last name as a string

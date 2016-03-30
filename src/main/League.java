@@ -7,6 +7,8 @@ import java.util.*;
 
 public class League 
 {
+	//limit for which league the competitor should belong to.
+	public static final int JUNIORI_LIMIT = 20;
 	//name of the league
 	private String name;
 	
@@ -60,6 +62,18 @@ public class League
 		
 		//NOT complete!
 		//still have to set it to the right league
+		if(participant == null) return false;
+		
+		int g = participant.getGender();
+		
+		if(g != Competitor.WOMAN && womenLeague) return false;
+		
+		if(ageLimit != 0){
+			if(ageLimit < JUNIORI_LIMIT){
+				if (ageLimit < participant.getAge()) return false;
+			}
+			else if(ageLimit > participant.getAge()) return false;
+		}
 		
 		participants.add(participant);
 		return true;
