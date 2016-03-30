@@ -41,4 +41,9 @@ public class Person
 	{
 		return age;
 	}
+	
+	//returns the first and last name as a string
+	public String toString(){
+		return firstName + " " + lastName;
+	}
 }

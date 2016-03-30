@@ -16,6 +16,7 @@ public class Team {
 	//vector containing all team members
 	private Vector<Participant> participants;
 	
+	//the constructor
 	public Team(){
 		
 		participants = new Vector<Participant>();
