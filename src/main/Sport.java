@@ -14,14 +14,19 @@ public class Sport
 	//vector containing all the leagues for each sport
 	private Vector<League> leagues;
 	
+	//vector containing all the teams
+	private Vector<Team> teams;
 	
-	public Sport(){
-		
-		leagues = new Vector<League>();
+	
+	public Sport(boolean teamSport, boolean leagueSport){
+		if(leagueSport)
+			leagues = new Vector<League>();
+		if(teamSport)
+			teams = new Vector<Team>();
 	}
 	
 	public Sport(String name){
-		this();
+	
 		this.name = name;
 	}
 	
@@ -40,8 +45,19 @@ public class Sport
 		return true;
 	}
 	
+	public boolean addTeam(Team team){
+		if(team == null) return false;
+		
+		teams.add(team);
+		
+		return true;
+	}
+	
 	public int nroOfLeagues() { return leagues.size();}
 	public League getLeague(int index){ return leagues.get(index);}
+	
+	public int nroOfTeams() { return teams.size();}
+	public Team getTeam(int index){ return teams.get(index);}
 	
 	public void setName(String name){ this.name = name; }
 	public String getName(){ return name; }

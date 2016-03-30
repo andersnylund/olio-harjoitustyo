@@ -9,7 +9,7 @@ public class Participant {
 
 	private Competitor competitor;
 	
-	private double score;
+	private double score = 0;
 	
 	//vector containing either persons or competitors
 	private Vector<Competitor> competitors;
@@ -21,7 +21,7 @@ public class Participant {
 	}
 	
 	public void setScore (double score){ this.score = score;}
-	public double getScroe(){ return score; }
+	public double getScore(){ return score; }
 	public Competitor getCompetitor(){ return competitor;}
 	
 	public String getLastname () { return competitor.getLastname (); }
@@ -29,6 +29,12 @@ public class Participant {
 	public int getGender () { return competitor.getGender (); }
 	public int getAge () { return competitor.getAge(); }
 	public int getNumber () { return competitor.getNumber(); }
+	
+	public String toString(){
+		if(score != 0)
+			return competitor.toString() + "\t\t\t" + Double.toString(score);
+		return competitor.toString();
+	}
 	
 	
 }

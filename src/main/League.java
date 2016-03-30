@@ -21,15 +21,12 @@ public class League
 	//vector containing all the participants in the league
 	private Vector<Participant> participants;
 	
-	//vector containing all the teams
-	private Vector<Team> teams;
 	
 	//Constructor
 	public League(){
 		
 		//creating the vector
 		participants = new Vector<Participant>();
-		teams = new Vector<Team>();
 	}
 	
 	protected League(String name, int ageLimit, boolean womenLeague){
@@ -60,8 +57,8 @@ public class League
 	
 	public boolean addParticipant(Participant participant){
 		
-		//NOT complete!
-		//still have to set it to the right league
+		//NOT complete
+		//check how it works
 		if(participant == null) return false;
 		
 		int g = participant.getGender();
