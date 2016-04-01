@@ -1,20 +1,18 @@
 package main;
 
-import uva.Lue;
+import java.util.Vector;
 
 public class Main 
 {
-	//COMPETITIONNAME is set as the name of the file if the user wants to save the recently made competition
+	//COMPETITION_NAME is set as the name of the file if the user wants to save the recently made competition
 	//or it is used as the filename to load to the program
 	static private String COMPETITION_NAME;
+	//an object of the main menu that is used by the Main-class
 	static View mainView = new View();
 	
-	private static Sport sport;
-	
-	private League league;
-	
-	private static boolean teamSport, leagueSport;
-	
+	//vector where all the persons of the competition are stored
+	//these persons are used later as competitors or officials
+	private static Vector<Person> persons = new Vector<Person>();
 	
 	public static void main(String[] args) 
 	{
@@ -39,15 +37,19 @@ public class Main
 	//different cases calls different methods to create or modify data
 	public static void mainMenu()
 	{	
+		
+		Add add = new Add();
+		
 		switch(mainView.printMainMenu())
 		{
 			//Add/edit competitor/official
 			case 1:	
-				
+				add.addEditPerson(persons);
+				break;	
 			//Add sport
 			case 2:
-				addSport();
-			
+				add.addSport();
+				break;
 			//Add team	
 			case 3:
 			
@@ -60,6 +62,8 @@ public class Main
 			//quit program
 			case 6:
 				System.exit(0);
+			default:
+				break;
 		}
 	}
 	
@@ -68,45 +72,6 @@ public class Main
 		return COMPETITION_NAME;
 	}
 	
-	public static void addSport(){
-		char set;
-		//Ask the user to say if the new sport is a team sport
-		System.out.println("Is it a team sport? (Y/N)");
 	
-		//waits for the user to insert either Y or N 
-		while(true){
-		set = Lue.merkki();
-		if(set == 'Y'){
-			teamSport = true;
-			break;
-		}
-		else if(set == 'N'){
-			teamSport = false;
-			break;
-		}
-		else
-			System.out.println("Wrong character input");
-		}
-		
-		//Ask the user to say if the new sport is a league sport
-		System.out.println("Does the sport contain leagues? (Y/N)");
-	
-		//waits for the user to insert either Y or N 
-		while(true){
-		set = Lue.merkki();
-		if(set == 'Y'){
-			leagueSport = true;
-			break;
-		}
-		else if(set == 'N'){
-			leagueSport = false;
-			break;
-		}
-		else
-			System.out.println("Wrong character input!");
-		}
-		
-		sport = new Sport(teamSport, leagueSport);
-	}
 }
 
