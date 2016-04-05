@@ -7,13 +7,17 @@ public class Add
 {	
 	private View view = new View();
 	
+	//method to add competitors (persons) to the competition. These competitors are used both as competitors and officials
+	//in different sports 
 	public Vector<Competitor> addEditCompetitor(Vector <Competitor> competitors)
 	{
-		
+		//lists all the competitors saved in the program
+		//when printed the number in front of the name is the competitionnumber
 		System.out.println("List of all persons: ");
 		for(int i = 0; i < competitors.size();i++)
 			System.out.println(competitors.elementAt(i));
 		
+		//ask user to add or edit competitors
 		System.out.println("\nAdd (A) or edit (E) competitor or official");
 		System.out.print(">");
 		
@@ -21,6 +25,7 @@ public class Add
 		while(true)
 		{
 			set = Lue.merkki();
+			//adding new competitor to the "competitor-vector" in Main-class
 			if(set == 'A')
 			{
 				Competitor competitor = new Competitor();
@@ -29,6 +34,7 @@ public class Add
 				competitors.add(competitor);
 				break;
 			}
+			//editing competitor in the "competitor-vector" in Main-class
 			else if(set == 'E')
 			{
 				System.out.println("Enter number of person to edit");
@@ -37,7 +43,7 @@ public class Add
 				
 				while(num>competitors.size())
 				{
-					System.out.print("Entered number not found. Please enter new number\n>");
+					System.out.print("Entered number of person not found. Please enter new number\n>");
 					num = Lue.kluku();
 				}
 				competitors.elementAt(num-1).setLastname(view.askLastname());
@@ -47,7 +53,7 @@ public class Add
 			else
 				System.out.println("Wrong character input");
 			}
-		
+		//returns the vector of competitors to the Main-class
 		return competitors;
 	}
 	
