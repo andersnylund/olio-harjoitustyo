@@ -30,6 +30,7 @@ public class Participant {
 	public int getAge () { return competitor.getAge(); }
 	public int getNumber () { return competitor.getNumber(); }
 	
+	@Override
 	public String toString(){
 		if(score != 0)
 			return competitor.toString() + "\t\t\t" + Double.toString(score);

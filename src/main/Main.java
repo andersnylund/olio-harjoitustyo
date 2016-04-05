@@ -14,6 +14,8 @@ public class Main
 	//these persons are used later as competitors or officials
 	private static Vector<Competitor> competitors = new Vector<Competitor>();
 	
+	private static Vector<Sport> sports = new Vector<Sport>();
+	
 	
 	
 	public static void main(String[] args) 
@@ -54,6 +56,7 @@ public class Main
 				break;
 			//Add team	
 			case 3:
+				add.addTeam(sports);
 			
 			//Add/edit points
 			case 4:

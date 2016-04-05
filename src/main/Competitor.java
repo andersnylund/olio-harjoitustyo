@@ -26,6 +26,7 @@ public class Competitor extends Person
 	}
 	
 	//returns the competitor number plus the first and last name as a string
+	@Override
 	public String toString(){
 		if(competitorNumber != 0)
 			return Integer.toString(competitorNumber) + ": " + super.toString();

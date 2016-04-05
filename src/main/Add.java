@@ -55,7 +55,7 @@ public class Add
 	private League league;
 	private boolean teamSport, leagueSport;
 	
-	public void addSport()
+	public Sport addSport()
 	{
 		char set;
 		//Ask the user to say if the new sport is a team sport
@@ -95,11 +95,37 @@ public class Add
 		}
 		
 		sport = new Sport(teamSport, leagueSport);
+		
+		return sport;
 	}
 	
-	public void addTeam()
+	private Team team;
+	
+	public void addTeam(Vector<Sport> sports)
 	{
+		for(int i = 0; i < sports.size(); i++)
+		{
+			System.out.println();
+		}
 		
+		team = new Team();
+		
+		char set;
+		
+		while(true){
+			System.out.println("Add member (Y/N)");
+			set = Lue.merkki();
+			if(set == 'Y'){
+				//team.addMember();
+				break;
+			}
+			else if(set == 'N'){
+				System.out.println("Team complete.");
+				break;
+			}
+			else
+				System.out.println("Wrong character input!");
+			}
 	}
 	
 }

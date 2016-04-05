@@ -73,4 +73,9 @@ public class Sport
 		return added;
 	}
 	
+	@Override
+	public String toString(){
+		return name;
+	}
+	
 }
