@@ -92,11 +92,31 @@ public class View
 	
 	public void printCompetitors(Vector<Competitor> competitors)
 	{
-		System.out.println("List of all competitors>");
+		System.out.println("List of all competitors: ");
 		for(int i = 0; i < competitors.size(); i++)
 		{
 			System.out.println(competitors.elementAt(i));
 		}
+	}
+	
+	public Competitor selectCompetitor(Vector<Competitor> competitors)
+	{
+		System.out.println("List of all competitors: ");
+		for(int i = 0; i < competitors.size(); i++)
+		{
+			System.out.println(competitors.elementAt(i));
+		}
+		
+		System.out.println("Select a competitor.");
+		int index= Lue.kluku();
+		
+		if(competitors.elementAt(index - 1)!=null)
+		{
+			return competitors.elementAt(index - 1);
+		}
+		System.out.println("Competitor not found.");
+		return null;
+		
 	}
 	
 }

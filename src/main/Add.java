@@ -7,13 +7,18 @@ public class Add
 {	
 	private View view = new View();
 	
+	private Sport sport;
+	private League league;
+	private Participant participant;
+	
+	private boolean teamSport, leagueSport;
+	
 	//method to add competitors (persons) to the competition. These competitors are used both as competitors and officials
 	//in different sports 
 	public Vector<Competitor> addEditCompetitor(Vector <Competitor> competitors)
 	{
 		//lists all the competitors saved in the program
 		//when printed the number in front of the name is the competitor-number
-		System.out.println("List of all persons: ");
 		view.printCompetitors(competitors);
 		
 		//ask user to add or edit competitors
@@ -56,9 +61,7 @@ public class Add
 		return competitors;
 	}
 	
-	private Sport sport;
-	private League league;
-	private boolean teamSport, leagueSport;
+
 	
 	public Sport addSport()
 	{
@@ -113,7 +116,7 @@ public class Add
 		//printing out all sports and if they are a team sport
 		for(int i = 0; i < sports.size(); i++)
 		{
-			System.out.print("\n" + (i+1) + ". " + sports.elementAt(i) + ", teamsport: ");
+			System.out.print((i+1) + ". " + sports.elementAt(i) + ", teamsport: ");
 			if(sports.elementAt(i).ifTeamSport())
 			{
 				System.out.println("yes");
@@ -148,10 +151,17 @@ public class Add
 				System.out.println("Add member (Y/N)");
 				set = Lue.merkki();
 				if(set == 'Y'){
-					//lists all persons in the competition.
-					view.printCompetitors(competitors);
-					//team.addMember();
-					System.out.println("Member added.");
+					
+					//Checks if there are any competitors in the competitor vector
+					if(!competitors.isEmpty())
+					{	
+						
+						participant = new Participant(view.selectCompetitor(competitors));
+						team.addMember(participant);
+						System.out.println("Member added.");
+					}
+					else
+						System.out.println("No competitors found. \nReturning back to main menu.");
 				}
 				else if(set == 'N'){
 					System.out.println("Team complete.");
@@ -164,7 +174,7 @@ public class Add
 				sports.elementAt(number -1).addTeam(team);
 		}
 		else
-			System.out.println("The sport is not a team sport.\nReturning backto main menu.");
+			System.out.println("The sport is not a team sport.\nReturning back to main menu.");
 		
 		return true;
 	}
