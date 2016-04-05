@@ -14,8 +14,7 @@ public class Add
 		//lists all the competitors saved in the program
 		//when printed the number in front of the name is the competitor-number
 		System.out.println("List of all persons: ");
-		for(int i = 0; i < competitors.size();i++)
-			System.out.println(competitors.elementAt(i));
+		view.printCompetitors(competitors);
 		
 		//ask user to add or edit competitors
 		System.out.println("\nAdd (A) or edit (E) competitor or official");
@@ -109,7 +108,7 @@ public class Add
 	
 	private Team team;
 	
-	public boolean addTeam(Vector<Sport> sports)
+	public boolean addTeam(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
 		//printing out all sports and if they are a team sport
 		for(int i = 0; i < sports.size(); i++)
@@ -139,9 +138,9 @@ public class Add
 		
 		
 		
-		if(sports.elementAt(number).ifTeamSport())
+		if(sports.elementAt(number - 1).ifTeamSport())
 		{
-			team = new Team();
+			team = new Team(view.setTeamName());
 			
 			char set;
 			
@@ -149,8 +148,10 @@ public class Add
 				System.out.println("Add member (Y/N)");
 				set = Lue.merkki();
 				if(set == 'Y'){
+					//lists all persons in the competition.
+					view.printCompetitors(competitors);
 					//team.addMember();
-					break;
+					System.out.println("Member added.");
 				}
 				else if(set == 'N'){
 					System.out.println("Team complete.");
@@ -159,8 +160,8 @@ public class Add
 				else
 					System.out.println("Wrong character input!");
 				}
-			
-			sport.addTeam(team);
+			if(team!=null)
+				sports.elementAt(number -1).addTeam(team);
 		}
 		else
 			System.out.println("The sport is not a team sport.\nReturning backto main menu.");

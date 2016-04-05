@@ -71,7 +71,14 @@ public class View
 	
 	public String setSportName()
 	{
-		System.out.println("Name of the sport\n>");
+		System.out.print("Name of the sport\n>");
+		String name = Lue.rivi();
+		return name;
+	}
+	
+	public String setTeamName()
+	{
+		System.out.print("Name of the team\n>");
 		String name = Lue.rivi();
 		return name;
 	}
@@ -82,5 +89,14 @@ public class View
 	{
 		
 	}	
+	
+	public void printCompetitors(Vector<Competitor> competitors)
+	{
+		System.out.println("List of all competitors>");
+		for(int i = 0; i < competitors.size(); i++)
+		{
+			System.out.println(competitors.elementAt(i));
+		}
+	}
 	
 }

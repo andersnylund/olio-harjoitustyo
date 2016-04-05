@@ -17,9 +17,10 @@ public class Team {
 	private Vector<Participant> teamMembers;
 	
 	//the constructor
-	public Team(){
+	public Team(String name){
 		
 		teamMembers = new Vector<Participant>();
+		this.name = name;
 	}
 	
 	public void addMember(Participant participant){
