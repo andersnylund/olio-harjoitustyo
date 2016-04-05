@@ -14,6 +14,8 @@ public class Main
 	//these persons are used later as competitors or officials
 	private static Vector<Person> persons = new Vector<Person>();
 	
+	
+	
 	public static void main(String[] args) 
 	{
 		switch(mainView.printStart())

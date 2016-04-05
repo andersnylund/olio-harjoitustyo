@@ -4,7 +4,9 @@ import uva.Lue;
 import java.util.Vector;
 
 public class Add 
-{
+{	
+	private View view = new View();
+	
 	public Vector<Person> addEditPerson(Vector <Person> persons)
 	{
 		
@@ -21,7 +23,7 @@ public class Add
 			if(set == 'A')
 			{
 				Person person = new Person();
-				person.setLastname();
+				person.setLastname(view.askLastname());
 				break;
 			}
 			else if(set == 'E'){
@@ -80,4 +82,10 @@ public class Add
 		
 		sport = new Sport(teamSport, leagueSport);
 	}
+	
+	public void addTeam()
+	{
+		
+	}
+	
 }
