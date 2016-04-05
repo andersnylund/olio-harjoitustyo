@@ -17,8 +17,15 @@ public class Sport
 	//vector containing all the teams
 	private Vector<Team> teams;
 	
+	//Variables to check if the sport contains teams and leagues
+	private boolean teamSport, leagueSport;
+	
 	
 	public Sport(boolean teamSport, boolean leagueSport){
+		
+		this.teamSport = teamSport;
+		this.leagueSport = leagueSport;
+		
 		if(leagueSport)
 			leagues = new Vector<League>();
 		if(teamSport)
@@ -62,6 +69,9 @@ public class Sport
 	public void setName(String name){ this.name = name; }
 	public String getName(){ return name; }
 	
+	public boolean ifTeamSport(){return teamSport;}
+	public boolean ifLeagueSport(){return leagueSport;}
+	
 	public boolean addParticipant(Competitor competitor){
 		Participant participant = new Participant(competitor);
 		
@@ -72,6 +82,8 @@ public class Sport
 		}
 		return added;
 	}
+	
+	
 	
 	@Override
 	public String toString(){

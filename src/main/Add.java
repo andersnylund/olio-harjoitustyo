@@ -103,9 +103,16 @@ public class Add
 	
 	public void addTeam(Vector<Sport> sports)
 	{
+		//printing out all sports and if they are a team sport
 		for(int i = 0; i < sports.size(); i++)
 		{
-			System.out.println();
+			System.out.print(sports.elementAt(i) + ", teamsport: ");
+			if(sports.elementAt(i).ifTeamSport())
+			{
+				System.out.println("yes");
+			}
+			else
+				System.out.println("no");
 		}
 		
 		team = new Team();
