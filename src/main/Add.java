@@ -12,7 +12,7 @@ public class Add
 	public Vector<Competitor> addEditCompetitor(Vector <Competitor> competitors)
 	{
 		//lists all the competitors saved in the program
-		//when printed the number in front of the name is the competitionnumber
+		//when printed the number in front of the name is the competitor-number
 		System.out.println("List of all persons: ");
 		for(int i = 0; i < competitors.size();i++)
 			System.out.println(competitors.elementAt(i));
@@ -100,7 +100,9 @@ public class Add
 			System.out.println("Wrong character input!");
 		}
 		
-		sport = new Sport(teamSport, leagueSport);
+		String name = view.setSportName();
+		
+		sport = new Sport(teamSport, leagueSport, name);
 		
 		return sport;
 	}

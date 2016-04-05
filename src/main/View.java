@@ -67,6 +67,13 @@ public class View
 		return Lue.kluku();
 	}
 	
+	public String setSportName()
+	{
+		System.out.println("Name of the sport\n>");
+		String name = Lue.rivi();
+		return name;
+	}
+	
 
 	//prints person
 	public void printInfo()

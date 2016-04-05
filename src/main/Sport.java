@@ -21,10 +21,11 @@ public class Sport
 	private boolean teamSport, leagueSport;
 	
 	
-	public Sport(boolean teamSport, boolean leagueSport){
+	public Sport(boolean teamSport, boolean leagueSport, String name){
 		
 		this.teamSport = teamSport;
 		this.leagueSport = leagueSport;
+		this.name = name;
 		
 		if(leagueSport)
 			leagues = new Vector<League>();
@@ -32,10 +33,7 @@ public class Sport
 			teams = new Vector<Team>();
 	}
 	
-	public Sport(String name){
-	
-		this.name = name;
-	}
+
 	
 	public boolean addLeague(League league){
 		
