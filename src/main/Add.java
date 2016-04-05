@@ -169,4 +169,9 @@ public class Add
 		return true;
 	}
 	
+	public void addEditPoints()
+	{
+		
+	}
+	
 }

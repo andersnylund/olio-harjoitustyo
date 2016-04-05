@@ -60,10 +60,11 @@ public class Main
 				break;
 			//Add/edit points
 			case 4:
-			
+				add.addEditPoints();
+				break;
 			//Show results/ save current results in the competition
 			case 5:
-				
+				break;
 			//quit program
 			case 6:
 				System.out.println("Shutting down program!");
