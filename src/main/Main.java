@@ -52,7 +52,7 @@ public class Main
 				break;	
 			//Add sport
 			case 2:
-				add.addSport();
+				sports.addElement(add.addSport());
 				break;
 			//Add team	
 			case 3:
@@ -66,7 +66,7 @@ public class Main
 				
 			//quit program
 			case 6:
-				System.out.println("Shutting down program");
+				System.out.println("Shutting down program!");
 				System.exit(0);
 			default:
 				break;
