@@ -7,14 +7,15 @@ public class Add
 {	
 	private View view = new View();
 	
-	public Vector<Person> addEditPerson(Vector <Person> persons)
+	public Vector<Competitor> addEditCompetitor(Vector <Competitor> competitors)
 	{
 		
 		System.out.println("List of all persons: ");
-		for(int i = 0; i < persons.size();i++)
-			System.out.println(persons.elementAt(i));
+		for(int i = 0; i < competitors.size();i++)
+			System.out.println(competitors.elementAt(i));
 		
-		System.out.print("Add (A) or edit (E) competitor or official");
+		System.out.println("\nAdd (A) or edit (E) competitor or official");
+		System.out.print(">");
 		
 		char set;
 		while(true)
@@ -22,19 +23,32 @@ public class Add
 			set = Lue.merkki();
 			if(set == 'A')
 			{
-				Person person = new Person();
-				person.setLastname(view.askLastname());
+				Competitor competitor = new Competitor();
+				competitor.setLastname(view.askLastname());
+				competitor.setFirstname(view.askFirstname());
+				competitors.add(competitor);
 				break;
 			}
-			else if(set == 'E'){
-				teamSport = false;
+			else if(set == 'E')
+			{
+				System.out.println("Enter number of person to edit");
+				System.out.print(">");
+				int num = Lue.kluku();
+				
+				while(num>competitors.size())
+				{
+					System.out.print("Entered number not found. Please enter new number\n>");
+					num = Lue.kluku();
+				}
+				competitors.elementAt(num-1).setLastname(view.askLastname());
+				competitors.elementAt(num-1).setFirstname(view.askFirstname());
 				break;
 			}
 			else
 				System.out.println("Wrong character input");
 			}
 		
-		return persons;
+		return competitors;
 	}
 	
 	private Sport sport;

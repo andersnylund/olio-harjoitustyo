@@ -12,7 +12,7 @@ public class Main
 	
 	//vector where all the persons of the competition are stored
 	//these persons are used later as competitors or officials
-	private static Vector<Person> persons = new Vector<Person>();
+	private static Vector<Competitor> competitors = new Vector<Competitor>();
 	
 	
 	
@@ -46,7 +46,7 @@ public class Main
 		{
 			//Add/edit competitor/official
 			case 1:	
-				add.addEditPerson(persons);
+				add.addEditCompetitor(competitors);
 				break;	
 			//Add sport
 			case 2:
