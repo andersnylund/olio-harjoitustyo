@@ -57,7 +57,7 @@ public class Main
 			//Add team	
 			case 3:
 				add.addTeam(sports);
-			
+				break;
 			//Add/edit points
 			case 4:
 			
@@ -66,6 +66,7 @@ public class Main
 				
 			//quit program
 			case 6:
+				System.out.println("Shutting down program");
 				System.exit(0);
 			default:
 				break;

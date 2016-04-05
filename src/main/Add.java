@@ -109,12 +109,12 @@ public class Add
 	
 	private Team team;
 	
-	public void addTeam(Vector<Sport> sports)
+	public boolean addTeam(Vector<Sport> sports)
 	{
 		//printing out all sports and if they are a team sport
 		for(int i = 0; i < sports.size(); i++)
 		{
-			System.out.print(sports.elementAt(i) + ", teamsport: ");
+			System.out.print("\n" + (i+1) + ". " + sports.elementAt(i) + ", teamsport: ");
 			if(sports.elementAt(i).ifTeamSport())
 			{
 				System.out.println("yes");
@@ -123,24 +123,49 @@ public class Add
 				System.out.println("no");
 		}
 		
-		team = new Team();
+		int number;
 		
-		char set;
+		if(!sports.isEmpty())
+			{
+			System.out.print("Select sport to add team to> ");
+			number = Lue.kluku();
+			}
+		else
+			{
+			System.out.println("No sports found. Create new sport.");
+			number = 0;
+			return true;
+			}
 		
-		while(true){
-			System.out.println("Add member (Y/N)");
-			set = Lue.merkki();
-			if(set == 'Y'){
-				//team.addMember();
-				break;
-			}
-			else if(set == 'N'){
-				System.out.println("Team complete.");
-				break;
-			}
-			else
-				System.out.println("Wrong character input!");
-			}
+		
+		
+		if(sports.elementAt(number).ifTeamSport())
+		{
+			team = new Team();
+			
+			char set;
+			
+			while(true){
+				System.out.println("Add member (Y/N)");
+				set = Lue.merkki();
+				if(set == 'Y'){
+					//team.addMember();
+					break;
+				}
+				else if(set == 'N'){
+					System.out.println("Team complete.");
+					break;
+				}
+				else
+					System.out.println("Wrong character input!");
+				}
+			
+			sport.addTeam(team);
+		}
+		else
+			System.out.println("The sport is not a team sport.\nReturning backto main menu.");
+		
+		return true;
 	}
 	
 }
