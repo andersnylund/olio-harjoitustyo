@@ -3,6 +3,8 @@
 
 package main;
 
+import java.util.Vector;
+
 import uva.*;
 
 
@@ -80,4 +82,5 @@ public class View
 	{
 		
 	}	
+	
 }
