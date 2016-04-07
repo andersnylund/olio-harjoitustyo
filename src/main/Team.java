@@ -60,6 +60,7 @@ public class Team {
 		return true;
 	}
 	
+	
 	public boolean deleteMember(Participant participant){
 		return deleteMember(participant.getLastname(), participant.getFirstname());
 	}

@@ -92,8 +92,12 @@ public class Sport
 		return added;
 	}
 	
+	public Vector<Team> getTeamVector()
+	{
+		return teams;
+	}
 	
-	
+
 	@Override
 	public String toString(){
 		return name;
