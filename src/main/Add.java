@@ -80,6 +80,7 @@ public class Add
 		System.out.print("\nAdd sport (S) or add participants to sport (P)\n>");
 		
 		char a;
+		//waits for the user to input either S or P
 		while(true)
 		{
 			a = Lue.merkki();
@@ -133,6 +134,7 @@ public class Add
 				sports.addElement(new Sport(teamSport, leagueSport, name)); 
 				break;
 			}
+			//lets user add participant to sport
 			else if(a == 'P')
 			{
 				if(sports.isEmpty())
@@ -142,6 +144,7 @@ public class Add
 				}
 				
 				System.out.print("Select sport");
+				view.selectSport(sports);
 				
 				break;
 			}
