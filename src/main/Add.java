@@ -227,10 +227,10 @@ public class Add
 						System.out.println("Member added.");
 					}
 					else
-						System.out.println("No competitors found. \nReturning back to main menu.");
+						System.out.println("No competitors found. \nDo you want to add a competitor?");
 				}
 				else if(set == 'N'){
-					System.out.println("Team complete.");
+					System.out.println("Team complete.\n");
 					break;
 				}
 				else
@@ -245,10 +245,16 @@ public class Add
 		return true;
 	}
 	
-	public void addTeamMember(Vector<Sport> sports, Vector<Competitor> competitors)
+	public boolean addTeamMember(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
 		//lists all the sports and lets the user select which sport to add a team member to.
 		sport = view.selectSport(sports);
+		
+		if(!sport.ifTeamSport())
+		{	
+			System.out.println("The sport is not a team sport.");
+			return false;
+		}
 		//lists all teams and lets the user select a team to add a member.
 		team = view.selectTeam(sport.getTeamVector());
 		
@@ -273,9 +279,18 @@ public class Add
 					System.out.println("Member added.");
 				}
 				else
-					System.out.println("No competitors found. \nReturning back to main menu.");
+					//NOT COMPLETE. The user should be able to add a competitor.
+					System.out.print("No competitors found. \nDo you want to add a competitor? (Y/N)\n>");
 			}
+			else if(set == 'N'){
+				System.out.println("Team complete.\n");
+				break;
+			}
+			else
+				System.out.println("Wrong character input!");
 		}
+		return true;
+		
 	}
 	
 	public void addEditPoints()
