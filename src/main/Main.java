@@ -53,7 +53,8 @@ public class Main
 				break;	
 			//Add sport
 			case 2:
-				sports.addElement(add.addSport());
+				add.addSportAndParticipants(sports, competitors);
+				//sports.addElement(add.addSport());
 				break;
 			//Add team	
 			case 3:

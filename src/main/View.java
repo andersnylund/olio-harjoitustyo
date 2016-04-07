@@ -60,7 +60,7 @@ public class View
 	public int printMainMenu()
 	{
 		System.out.println("\n1. Add/edit competitors or officials");
-		System.out.println("2. Add sport");
+		System.out.println("2. Add sport and add participants to sport");
 		System.out.println("3. Add teams");
 		System.out.println("4. Add/edit points");
 		System.out.println("5. Show results/save current results in competition");

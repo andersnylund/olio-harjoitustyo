@@ -63,50 +63,91 @@ public class Add
 	
 
 	
-	public Sport addSport()
+	public void addSportAndParticipants(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
-		char set;
-		//Ask the user to say if the new sport is a team sport
-		System.out.println("Is it a team sport? (Y/N)");
-	
-		//waits for the user to insert either Y or N 
-		while(true){
-		set = Lue.merkki();
-		if(set == 'Y'){
-			teamSport = true;
-			break;
+		//printing out all sports and if they are a team sport
+		System.out.println("List of all current sports:");
+		for(int i = 0; i < sports.size(); i++)
+		{
+			System.out.print((i+1) + ". " + sports.elementAt(i) + ", teamsport: ");
+			if(sports.elementAt(i).ifTeamSport())
+			{
+				System.out.println("yes");
+			}
+			else
+				System.out.println("no");
 		}
-		else if(set == 'N'){
-			teamSport = false;
-			break;
-		}
-		else
-			System.out.println("Wrong character input");
-		}
+		System.out.print("\nAdd sport (S) or add participants to sport (P)\n>");
 		
-		//Ask the user to say if the new sport is a league sport
-		System.out.println("Does the sport contain leagues? (Y/N)");
-	
-		//waits for the user to insert either Y or N 
-		while(true){
-		set = Lue.merkki();
-		if(set == 'Y'){
-			leagueSport = true;
-			break;
+		char a;
+		while(true)
+		{
+			a = Lue.merkki();
+			if(a == 'S')
+			{
+				char set;
+				//Ask the user to say if the new sport is a team sport
+				System.out.println("Is it a team sport? (Y/N)");
+			
+				//waits for the user to insert either Y or N 
+				while(true)
+				{
+					set = Lue.merkki();
+					if(set == 'Y')
+					{
+						teamSport = true;
+						break;
+					}
+					else if(set == 'N')
+					{
+						teamSport = false;
+						break;
+					}
+					else
+						System.out.println("Wrong character input");
+				}
+				
+				//Ask the user to say if the new sport is a league sport
+				System.out.println("Does the sport contain leagues? (Y/N)");
+			
+				//waits for the user to insert either Y or N 
+				while(true)
+				{
+					set = Lue.merkki();
+					if(set == 'Y')
+					{
+						leagueSport = true;
+						break;
+					}
+					else if(set == 'N')
+					{
+						leagueSport = false;
+						break;
+					}
+					else
+						System.out.println("Wrong character input!");
+				}
+				
+				String name = view.setSportName();
+				
+				sports.addElement(new Sport(teamSport, leagueSport, name)); 
+				break;
+			}
+			else if(a == 'P')
+			{
+				if(sports.isEmpty())
+				{
+					System.out.println("No sports found, add a sport and try again!");
+					break;
+				}
+				
+				System.out.print("Select sport");
+				
+				break;
+			}
+			else
+				System.out.println("Wrong character input!");
 		}
-		else if(set == 'N'){
-			leagueSport = false;
-			break;
-		}
-		else
-			System.out.println("Wrong character input!");
-		}
-		
-		String name = view.setSportName();
-		
-		sport = new Sport(teamSport, leagueSport, name);
-		
-		return sport;
 	}
 	
 	private Team team;
