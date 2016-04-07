@@ -66,18 +66,8 @@ public class Add
 	
 	public void addSportAndParticipants(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
-		//printing out all sports and if they are a team sport
-		System.out.println("List of all current sports:");
-		for(int i = 0; i < sports.size(); i++)
-		{
-			System.out.print((i+1) + ". " + sports.elementAt(i) + ", teamsport: ");
-			if(sports.elementAt(i).ifTeamSport())
-			{
-				System.out.println("yes");
-			}
-			else
-				System.out.println("no");
-		}
+		view.listSports(sports);
+		
 		System.out.print("\nAdd sport (S) or add participants to sport (P)\n>");
 		
 		char a;
@@ -143,11 +133,12 @@ public class Add
 					System.out.println("No sports found, add a sport and try again!");
 					break;
 				}
+				while(true)
+				{
+					view.selectSport(sports).addParticipant(view.selectCompetitor(competitors));
+					break;
+				}
 				
-				System.out.print("Select sport");
-				view.selectSport(sports);
-				
-				break;
 			}
 			else
 				System.out.println("Wrong character input!");

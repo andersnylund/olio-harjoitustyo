@@ -15,14 +15,14 @@ public class View
 
 	public String askLastname()
 	{
-		System.out.print("Lastname>");
+		System.out.print("Lastname\n>");
 		String last=Lue.rivi();
 		System.out.println();
 		return last;
 	}
 	public String askFirstname()
 	{
-		System.out.print("Firstname>");
+		System.out.print("Firstname\n>");
 		String first=Lue.rivi();
 		System.out.println();
 		return first;
@@ -30,7 +30,7 @@ public class View
 	
 	public int askAge()
 	{
-		System.out.print("Age>");
+		System.out.print("Age\n>");
 		int age = Lue.kluku();
 		System.out.println();
 		return age;
@@ -53,7 +53,7 @@ public class View
 	//sets name for the created competition and return it
 	public String setCompetitionName()
 	{
-		System.out.print("Enter name of competition> ");
+		System.out.print("Enter name of competition\n>");
 		return Lue.rivi();
 	}
 	
@@ -96,7 +96,7 @@ public class View
 		
 		while(true)
 		{
-			System.out.println("Select a competitor.");
+			System.out.print("Select a competitor\n>");
 			int index= Lue.kluku();
 			
 			if(competitors.elementAt(index - 1)!=null)
@@ -114,7 +114,7 @@ public class View
 		
 		while(true)
 		{
-			System.out.println("Select a team.");
+			System.out.print("Select a team\n>");
 			int index = Lue.kluku();
 			
 			if(teams.elementAt(index - 1)!= null)
@@ -131,7 +131,7 @@ public class View
 		
 		while (true)
 		{	
-			System.out.println("Select a sport.");
+			System.out.print("Select a sport\n>");
 			int index = Lue.kluku();
 			
 			if(sports.elementAt(index - 1)!= null)
@@ -162,10 +162,23 @@ public class View
 	
 	public void listSports(Vector<Sport> sports)
 	{
-		System.out.println("List of all sports: ");
+		System.out.println("List of all sports:");
 		for(int i = 0; i < sports.size(); i++)
 		{
-			System.out.println(sports.elementAt(i));
+			System.out.print((i+1) + ". " + sports.elementAt(i) + ", Teamsport: ");
+			if(sports.elementAt(i).ifTeamSport())
+			{
+				System.out.print("Yes ");
+			}
+			else
+				System.out.print("No ");
+			System.out.print("Leaguesport: ");
+			if(sports.elementAt(i).ifLeagueSport())
+			{
+				System.out.println("Yes ");
+			}
+			else
+				System.out.println("No ");
 		}
 	}
 	
