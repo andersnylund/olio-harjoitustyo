@@ -14,6 +14,7 @@ public class Main
 	//these persons are used later as competitors or officials
 	private static Vector<Competitor> competitors = new Vector<Competitor>();
 	
+	//Creates a vector of sport objects.
 	private static Vector<Sport> sports = new Vector<Sport>();
 	
 	

@@ -119,4 +119,23 @@ public class View
 		
 	}
 	
+	public Team selectTeam(Vector<Team> teams)
+	{
+		System.out.println("List of all teams: ");
+		for(int i = 0; i < teams.size(); i++)
+		{
+			System.out.println(teams.elementAt(i));
+		}
+		
+		System.out.println("Select a team.");
+		int index = Lue.kluku();
+		
+		if(teams.elementAt(index - 1)!= null)
+		{
+			return teams.elementAt(index - 1);
+		}
+		System.out.println("Team not found.");
+		return null;
+	}
+	
 }

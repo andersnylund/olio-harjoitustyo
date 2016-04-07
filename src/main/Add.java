@@ -138,11 +138,18 @@ public class Add
 			number = 0;
 			return true;
 			}
+		/**
+		 * Adds a team. Then asks the user if he wants to add team members. If yes, lists all the teams available and lets the 
+		 * user select which team to add member to.
+		 * 
+		 * After that, lists all the competitors and lets the user select which competitor to add.
+		 * 
+		 */
 		
-		
-		
+		//Checks if the selected sport is a team sport.
 		if(sports.elementAt(number - 1).ifTeamSport())
-		{
+		{	
+			//creates a new team object.
 			team = new Team(view.setTeamName());
 			
 			char set;
@@ -155,8 +162,12 @@ public class Add
 					//Checks if there are any competitors in the competitor vector
 					if(!competitors.isEmpty())
 					{	
-						
+						//lists all the competitors
+						//creates  new participant object and lets the user choose
+						//which competitor to add to the participant object
 						participant = new Participant(view.selectCompetitor(competitors));
+						
+						//adds the participant to the team member vector.
 						team.addMember(participant);
 						System.out.println("Member added.");
 					}
@@ -177,6 +188,12 @@ public class Add
 			System.out.println("The sport is not a team sport.\nReturning back to main menu.");
 		
 		return true;
+	}
+	
+	public void addEditTeamMember(Vector<Team> teams)
+	{
+		//lists all teams and lets the user select a team to add a member.
+		view.selectTeam(teams);
 	}
 	
 	public void addEditPoints()

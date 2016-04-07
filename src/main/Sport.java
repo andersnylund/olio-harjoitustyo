@@ -17,6 +17,9 @@ public class Sport
 	//vector containing all the teams
 	private Vector<Team> teams;
 	
+	//Vector containing participants if the sport is not a team or league sport.
+	private Vector<Participant> participants;
+	
 	//Variables to check if the sport contains teams and leagues
 	private boolean teamSport, leagueSport;
 	
@@ -27,10 +30,18 @@ public class Sport
 		this.leagueSport = leagueSport;
 		this.name = name;
 		
+		//creates a league vector if the sport is a league sport
 		if(leagueSport)
 			leagues = new Vector<League>();
+		//creates a team vector if the sport is a team sport
 		if(teamSport)
 			teams = new Vector<Team>();
+		//creates a participant vector if the sport is neither a team or league sport. 
+		if(!teamSport && !leagueSport)
+		{
+			participants = new Vector<Participant>();
+		}
+		
 	}
 	
 
