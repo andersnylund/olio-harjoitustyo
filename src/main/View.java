@@ -90,52 +90,83 @@ public class View
 		
 	}	
 	
-	public void printCompetitors(Vector<Competitor> competitors)
-	{
-		System.out.println("List of all competitors: ");
-		for(int i = 0; i < competitors.size(); i++)
-		{
-			System.out.println(competitors.elementAt(i));
-		}
-	}
-	
 	public Competitor selectCompetitor(Vector<Competitor> competitors)
-	{
-		System.out.println("List of all competitors: ");
-		for(int i = 0; i < competitors.size(); i++)
-		{
-			System.out.println(competitors.elementAt(i));
-		}
+	{	
+		listCompetitors(competitors);
 		
-		System.out.println("Select a competitor.");
-		int index= Lue.kluku();
-		
-		if(competitors.elementAt(index - 1)!=null)
+		while(true)
 		{
-			return competitors.elementAt(index - 1);
+			System.out.println("Select a competitor.");
+			int index= Lue.kluku();
+			
+			if(competitors.elementAt(index - 1)!=null)
+			{
+				return competitors.elementAt(index - 1);
+			}
+			System.out.println("Competitor not found. Choose an existing competitor.");
 		}
-		System.out.println("Competitor not found.");
-		return null;
 		
 	}
 	
 	public Team selectTeam(Vector<Team> teams)
+	{
+		listTeams(teams);
+		
+		while(true)
+		{
+			System.out.println("Select a team.");
+			int index = Lue.kluku();
+			
+			if(teams.elementAt(index - 1)!= null)
+			{
+				return teams.elementAt(index - 1);
+			}
+			System.out.println("Team not found. Choose an existing team.");
+		}
+	}
+	
+	public Sport selectSport(Vector<Sport> sports)
+	{
+		listSports(sports);
+		
+		while (true)
+		{	
+			System.out.println("Select a sport.");
+			int index = Lue.kluku();
+			
+			if(sports.elementAt(index - 1)!= null)
+			{
+				return sports.elementAt(index - 1);
+			}
+			System.out.println("Sport not found. Choose an existing sport.");
+		}
+	}
+	
+	public void listCompetitors(Vector<Competitor> competitors)
+	{
+		System.out.println("List of all competitors: ");
+		for(int i = 0; i < competitors.size(); i++)
+		{
+			System.out.println(competitors.elementAt(i));
+		}
+	}
+	
+	public void listTeams(Vector<Team> teams)
 	{
 		System.out.println("List of all teams: ");
 		for(int i = 0; i < teams.size(); i++)
 		{
 			System.out.println(teams.elementAt(i));
 		}
-		
-		System.out.println("Select a team.");
-		int index = Lue.kluku();
-		
-		if(teams.elementAt(index - 1)!= null)
+	}
+	
+	public void listSports(Vector<Sport> sports)
+	{
+		System.out.println("List of all sports: ");
+		for(int i = 0; i < sports.size(); i++)
 		{
-			return teams.elementAt(index - 1);
+			System.out.println(sports.elementAt(i));
 		}
-		System.out.println("Team not found.");
-		return null;
 	}
 	
 }

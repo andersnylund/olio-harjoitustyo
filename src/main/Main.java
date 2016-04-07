@@ -58,7 +58,7 @@ public class Main
 				break;
 			//Add team	
 			case 3:
-				add.addTeam(sports, competitors);
+				add.addTeamOrMembers(sports, competitors);
 				break;
 			//Add/edit points
 			case 4:

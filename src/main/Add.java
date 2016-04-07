@@ -19,7 +19,7 @@ public class Add
 	{
 		//lists all the competitors saved in the program
 		//when printed the number in front of the name is the competitor-number
-		view.printCompetitors(competitors);
+		view.listCompetitors(competitors);
 		
 		//ask user to add or edit competitors
 		System.out.println("\nAdd (A) or edit (E) competitor or official");
@@ -155,6 +155,20 @@ public class Add
 	
 	private Team team;
 	
+	public boolean addTeamOrMembers(Vector<Sport> sports, Vector<Competitor> competitors)
+	{
+		//Asks the user if he wants to add a team or members to a team
+		System.out.println("What do you want to do? \n1. Add a team?\n2. Add members to a team?\n3. Back to main menu?");
+		int index = Lue.kluku();
+		
+		switch(index)
+		{
+		case 1: addTeam(sports, competitors); break;
+		case 2: //addEditTeamMember(teams);
+		}
+		
+
+	}
 	public boolean addTeam(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
 		//printing out all sports and if they are a team sport
