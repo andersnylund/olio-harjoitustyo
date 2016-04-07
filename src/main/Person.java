@@ -74,6 +74,6 @@ public class Person
 	//returns the first and last name as a string
 	@Override
 	public String toString(){
-		return firstName + " " + lastName;
+		return firstName + " " + lastName +", "+age+", "+gender ;
 	}
 }

@@ -36,6 +36,8 @@ public class Add
 				Competitor competitor = new Competitor();
 				competitor.setLastname(view.askLastname());
 				competitor.setFirstname(view.askFirstname());
+				competitor.setAge(view.askAge());
+				competitor.setGender(view.askGender());
 				competitors.add(competitor);
 				break;
 			}
@@ -135,6 +137,8 @@ public class Add
 				}
 				while(true)
 				{
+					//prints sport and lets user select one
+					//prints competitors and lets user to select one and make it a participant in selected sport
 					view.selectSport(sports).addParticipant(view.selectCompetitor(competitors));
 					break;
 				}
@@ -144,8 +148,6 @@ public class Add
 				System.out.println("Wrong character input!");
 		}
 	}
-	
-	
 	
 	public boolean addTeamOrMembers(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
