@@ -45,26 +45,29 @@ public class Add
 				break;
 			}
 			//editing competitor in the "competitor-vector" in Main-class
-			else if(set == 2)
+			else if(set == 2 && competitors.size()!=0)
 			{
+				view.listCompetitors(competitors);
 				System.out.println("Enter number of person to edit");
 				System.out.print(">");
 				int num = Lue.kluku();
 				
-				while(num>competitors.size())
+				while(num>competitors.size() || num < 1)
 				{
 					System.out.print("Entered number of person not found. Please enter new number\n>");
 					num = Lue.kluku();
 				}
 				competitors.elementAt(num-1).setLastname(view.askLastname());
 				competitors.elementAt(num-1).setFirstname(view.askFirstname());
-				break;
+				competitors.elementAt(num-1).setAge(view.askAge());
+				competitors.elementAt(num-1).setGender(view.askGender());
+				
 			}
 			
 			else if(set == 3)
 				break;
 			else
-				System.out.println("Wrong input");
+				System.out.println("Wrong input or list of competitors or officials is empty\n>");
 			}
 		//returns the vector of competitors to the Main-class
 		return competitors;
