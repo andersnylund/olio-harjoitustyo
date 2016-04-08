@@ -9,11 +9,12 @@ public class Person
 	public static final int NAME_MIN_LENGTH = 1;
 	
 	private String lastName, firstName;
-	private int age, gender;
+	private int age;
+	private char gender;
 	
-	public static final int MAN = 1;
-	public static final int WOMAN = 2;
-	public static final int OTHER = 3;
+	public static final char MAN = 'M';
+	public static final char WOMAN = 'W';
+	public static final char OTHER = 'O';
 	
 	private static boolean checkName(String name){
 		
@@ -46,9 +47,9 @@ public class Person
 	
 	public void setGender(int gender){
 		switch (gender){
-		case MAN: gender = MAN; break;
-		case WOMAN: gender = WOMAN; break;
-		case OTHER: gender = OTHER; break;
+		case 1: this.gender = MAN; break;
+		case 2: this.gender = WOMAN; break;
+		case 3: this.gender = OTHER; break;
 		}
 	}
 	
@@ -67,7 +68,7 @@ public class Person
 		return age;
 	}
 	
-	public int getGender(){
+	public char getGender(){
 		return gender;
 	}
 	

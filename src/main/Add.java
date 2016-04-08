@@ -18,20 +18,23 @@ public class Add
 	//in different sports 
 	public Vector<Competitor> addEditCompetitor(Vector <Competitor> competitors)
 	{
+		
 		//lists all the competitors saved in the program
 		//when printed the number in front of the name is the competitor-number
 		view.listCompetitors(competitors);
 		
 		//ask user to add or edit competitors
-		System.out.println("\nAdd (A) or edit (E) competitor or official");
+		System.out.println("\n1. Add competitor or official");
+		System.out.println("2. Edit competitor or official");
+		System.out.println("3. Back to main menu");
 		System.out.print(">");
 		
-		char set;
+		int set;
 		while(true)
 		{
-			set = Lue.merkki();
+			set = Lue.kluku();
 			//adding new competitor to the "competitor-vector" in Main-class
-			if(set == 'A')
+			if(set == 1)
 			{
 				Competitor competitor = new Competitor();
 				competitor.setLastname(view.askLastname());
@@ -42,7 +45,7 @@ public class Add
 				break;
 			}
 			//editing competitor in the "competitor-vector" in Main-class
-			else if(set == 'E')
+			else if(set == 2)
 			{
 				System.out.println("Enter number of person to edit");
 				System.out.print(">");
@@ -57,8 +60,11 @@ public class Add
 				competitors.elementAt(num-1).setFirstname(view.askFirstname());
 				break;
 			}
+			
+			else if(set == 3)
+				break;
 			else
-				System.out.println("Wrong character input");
+				System.out.println("Wrong input");
 			}
 		//returns the vector of competitors to the Main-class
 		return competitors;
@@ -70,14 +76,17 @@ public class Add
 	{
 		view.listSports(sports);
 		
-		System.out.print("\nAdd sport (S) or add participants to sport (P)\n>");
+		System.out.println("\n1. Add sport");
+		System.out.println("2. Add participants to sport");
+		System.out.println("3. Back to main menu");
+		System.out.print(">");
 		
-		char a;
-		//waits for the user to input either S or P
+		int a;
+		//waits for the user to input either 1, 2 or 3
 		while(true)
 		{
-			a = Lue.merkki();
-			if(a == 'S')
+			a = Lue.kluku();
+			if(a == 1)
 			{
 				char set;
 				//Ask the user to say if the new sport is a team sport
@@ -128,7 +137,7 @@ public class Add
 				break;
 			}
 			//lets user add participant to sport
-			else if(a == 'P')
+			else if(a == 2)
 			{
 				if(sports.isEmpty())
 				{
@@ -144,8 +153,10 @@ public class Add
 				}
 				
 			}
+			else if (a == 3)
+				break;
 			else
-				System.out.println("Wrong character input!");
+				System.out.println("Wrong input!");
 		}
 	}
 	

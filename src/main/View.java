@@ -36,7 +36,7 @@ public class View
 	public int askGender()
 	{
 		System.out.print("Gender (Man = 1, Woman = 2, Other = 3)\n>");
-		char gender = Lue.merkki();
+		int gender = Lue.kluku();
 		return gender;
 	}
 	
