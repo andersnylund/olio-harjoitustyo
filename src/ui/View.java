@@ -18,14 +18,12 @@ public class View
 	{
 		System.out.print("Lastname\n>");
 		String last=Lue.rivi();
-		System.out.println();
 		return last;
 	}
 	public String askFirstname()
 	{
 		System.out.print("Firstname\n>");
 		String first=Lue.rivi();
-		System.out.println();
 		return first;
 	}
 	
@@ -33,8 +31,14 @@ public class View
 	{
 		System.out.print("Age\n>");
 		int age = Lue.kluku();
-		System.out.println();
 		return age;
+	}
+	
+	public int askGender()
+	{
+		System.out.print("Gender (Man = 1, Woman = 2, Other = 3)\n>");
+		int gender = Lue.kluku();
+		return gender;
 	}
 	
 	//Ask user to either start new competition or load an existing competition
