@@ -1,13 +1,15 @@
-package main;
+package ui;
 
 import java.util.Vector;
+
+import data.*;
 
 public class Main 
 {
 	//COMPETITION_NAME is set as the name of the file if the user wants to save the recently made competition
 	//or it is used as the filename to load to the program
 	static private String COMPETITION_NAME;
-	//an object of the main menu that is used by the Main-class
+	//an object of the data menu that is used by the Main-class
 	static View mainView = new View();
 	
 	//vector where all the persons of the competition are stored
@@ -17,6 +19,10 @@ public class Main
 	//Creates a vector of sport objects.
 	private static Vector<Sport> sports = new Vector<Sport>();
 	
+	private static AddTeam addTeam = new AddTeam();
+	private static AddCompetitor addCompetitor = new AddCompetitor();
+	private static AddSport addSport = new AddSport();
+	private static AddPoints addPoints = new AddPoints();
 	
 	
 	public static void main(String[] args) 
@@ -38,31 +44,29 @@ public class Main
 			mainMenu();
 	}	
 	
-	//the main method that is run every time user has done a task
+	//the data method that is run every time user has done a task
 	//different cases calls different methods to create or modify data
 	public static void mainMenu()
 	{	
 		
-		Add add = new Add();
-		
 		switch(mainView.printMainMenu())
 		{
-			//Add/edit competitor/official
+			//AddSport/edit competitor/official
 			case 1:	
-				add.addEditCompetitor(competitors);
+				addCompetitor.addEditCompetitor(competitors);
 				break;	
-			//Add sport
+			//AddSport sport
 			case 2:
-				add.addSportAndParticipants(sports, competitors);
-				//sports.addElement(add.addSport());
+				addSport.addSportAndParticipants(sports, competitors);
+				//sports.addElement(addSport.addSport());
 				break;
-			//Add team	
+			//AddSport team	
 			case 3:
-				add.addTeamOrMembers(sports, competitors);
+				addTeam.addTeamOrMembers(sports, competitors);
 				break;
-			//Add/edit points
+			//AddSport/edit points
 			case 4:
-				add.addEditPoints();
+				addPoints.addEditPoints();
 				break;
 			//Show results/ save current results in the competition
 			case 5:
