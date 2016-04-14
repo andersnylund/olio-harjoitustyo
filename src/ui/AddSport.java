@@ -18,22 +18,29 @@ public class AddSport
 	{
 		view.listSports(sports);
 		
-		System.out.print("\nAdd sport (S) or add participants to sport (P)\n>");
+		System.out.println("\n1. Add sport");
+		System.out.println("2. Add participants to sport");
+		System.out.println("3. Back to main menu");
+		System.out.print(">");
+		
 		
 		char a;
 		//waits for the user to input either S or P
 		while(true)
 		{
 			a = Lue.merkki();
-			if(a == 'S')
+			if(a == '1')
 			{
 				addSport(sports);
 				break;
 			}
 			//lets user add participant to sport
-			else if(a == 'P')
+			else if(a == '2')
 			{
 				addParticipantsToSport(sports, competitors);
+				break;
+			}
+			else if(a == '3'){
 				break;
 			}
 			else

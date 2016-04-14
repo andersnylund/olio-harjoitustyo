@@ -19,7 +19,9 @@ public class AddCompetitor
 		view.listCompetitors(competitors);
 		
 		//ask user to add or edit competitors
-		System.out.println("\nAdd (A) or edit (E) competitor or official");
+		System.out.println("\n1. Add competitor or official");
+		System.out.println("2. Edit competitor or official");
+		System.out.println("3. Back to main menu");
 		System.out.print(">");
 		
 		char set;
@@ -27,15 +29,18 @@ public class AddCompetitor
 		{
 			set = Lue.merkki();
 			//adding new competitor to the "competitor-vector" in Main-class
-			if(set == 'A')
+			if(set == '1')
 			{
 				addCompetitor(competitors);
 				break;
 			}
 			//editing competitor in the "competitor-vector" in Main-class
-			else if(set == 'E')
+			else if(set == '2')
 			{
 				editCompetitor(competitors);
+				break;
+			}
+			else if(set == '3'){
 				break;
 			}
 			else
@@ -50,6 +55,8 @@ public class AddCompetitor
 		Competitor competitor = new Competitor();
 		competitor.setLastname(view.askLastname());
 		competitor.setFirstname(view.askFirstname());
+		competitor.setAge(view.askAge());
+		competitor.setGender(view.askGender());
 		competitors.add(competitor);
 	}
 	
@@ -58,5 +65,7 @@ public class AddCompetitor
 		competitor = view.selectCompetitor(competitors, "to edit");
 		competitor.setLastname(view.askLastname());
 		competitor.setFirstname(view.askFirstname());
+		competitor.setAge(view.askAge());
+		competitor.setGender(view.askGender());
 	}
 }
