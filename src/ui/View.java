@@ -115,7 +115,10 @@ public class View
 	
 	public Team selectTeam(Vector<Team> teams)
 	{
-		listTeams(teams);
+		if(!listTeams(teams)){
+			System.out.println("No teams found.");
+			return null;
+		}
 		
 		while(true)
 		{
@@ -147,26 +150,34 @@ public class View
 		}
 	}
 	
-	public void listCompetitors(Vector<Competitor> competitors)
-	{
+	public boolean listCompetitors(Vector<Competitor> competitors)
+	{	
+		if(competitors.isEmpty())
+			return false;
 		System.out.println("List of all competitors: ");
 		for(int i = 0; i < competitors.size(); i++)
 		{
 			System.out.println(competitors.elementAt(i));
 		}
+		return true;
 	}
 	
-	public void listTeams(Vector<Team> teams)
+	public boolean listTeams(Vector<Team> teams)
 	{
+		if(teams.isEmpty())
+			return false;
 		System.out.println("List of all teams: ");
 		for(int i = 0; i < teams.size(); i++)
 		{
 			System.out.println(teams.elementAt(i));
 		}
+		return true;
 	}
 	
-	public void listSports(Vector<Sport> sports)
-	{
+	public boolean listSports(Vector<Sport> sports)
+	{	
+		if(sports.isEmpty())
+			return false;
 		System.out.println("List of all sports:");
 		for(int i = 0; i < sports.size(); i++)
 		{
@@ -185,6 +196,7 @@ public class View
 			else
 				System.out.println("No ");
 		}
+		return true;
 	}
 	
 }
