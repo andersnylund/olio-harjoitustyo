@@ -109,6 +109,9 @@ public class AddTeam
 		}
 		//lists all teams and lets the user select a team to add a member.
 		team = view.selectTeam(sport.getTeamVector());
+		if(team == null){
+			return false;
+		}
 		
 		addMember(competitors);
 		

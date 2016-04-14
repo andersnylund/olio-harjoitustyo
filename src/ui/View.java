@@ -116,7 +116,6 @@ public class View
 	public Team selectTeam(Vector<Team> teams)
 	{
 		if(!listTeams(teams)){
-			System.out.println("No teams found.");
 			return null;
 		}
 		
@@ -164,8 +163,10 @@ public class View
 	
 	public boolean listTeams(Vector<Team> teams)
 	{
-		if(teams.isEmpty())
+		if(teams.isEmpty()){
+			System.out.println("No teams found.");
 			return false;
+		}
 		System.out.println("List of all teams: ");
 		for(int i = 0; i < teams.size(); i++)
 		{
