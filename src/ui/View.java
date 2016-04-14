@@ -1,10 +1,11 @@
 //Anders Nylund w101302
 //Jeremias Snellman w101318
 
-package main;
+package ui;
 
 import java.util.Vector;
 
+import data.*;
 import uva.*;
 
 
@@ -63,10 +64,10 @@ public class View
 	
 	public int printMainMenu()
 	{
-		System.out.println("\n1. Add/edit competitors or officials");
-		System.out.println("2. Add sport and add participants to sport");
-		System.out.println("3. Add teams");
-		System.out.println("4. Add/edit points");
+		System.out.println("\n1. AddSport/edit competitors or officials");
+		System.out.println("2. AddSport sport and add participants to sport");
+		System.out.println("3. AddSport teams");
+		System.out.println("4. AddSport/edit points");
 		System.out.println("5. Show results/save current results in competition");
 		System.out.println("6. Quit program");
 		System.out.print("> ");
@@ -94,13 +95,13 @@ public class View
 		
 	}	
 	
-	public Competitor selectCompetitor(Vector<Competitor> competitors)
+	public Competitor selectCompetitor(Vector<Competitor> competitors, String message)
 	{	
 		listCompetitors(competitors);
 		
 		while(true)
 		{
-			System.out.print("Select a competitor\n>");
+			System.out.print("Select a competitor " + message + "\n>");
 			int index= Lue.kluku();
 			
 			if(competitors.elementAt(index - 1)!=null)
@@ -114,7 +115,10 @@ public class View
 	
 	public Team selectTeam(Vector<Team> teams)
 	{
-		listTeams(teams);
+		if(!listTeams(teams)){
+			System.out.println("No teams found.");
+			return null;
+		}
 		
 		while(true)
 		{
@@ -146,26 +150,34 @@ public class View
 		}
 	}
 	
-	public void listCompetitors(Vector<Competitor> competitors)
-	{
+	public boolean listCompetitors(Vector<Competitor> competitors)
+	{	
+		if(competitors.isEmpty())
+			return false;
 		System.out.println("List of all competitors: ");
 		for(int i = 0; i < competitors.size(); i++)
 		{
 			System.out.println(competitors.elementAt(i));
 		}
+		return true;
 	}
 	
-	public void listTeams(Vector<Team> teams)
+	public boolean listTeams(Vector<Team> teams)
 	{
+		if(teams.isEmpty())
+			return false;
 		System.out.println("List of all teams: ");
 		for(int i = 0; i < teams.size(); i++)
 		{
 			System.out.println(teams.elementAt(i));
 		}
+		return true;
 	}
 	
-	public void listSports(Vector<Sport> sports)
-	{
+	public boolean listSports(Vector<Sport> sports)
+	{	
+		if(sports.isEmpty())
+			return false;
 		System.out.println("List of all sports:");
 		for(int i = 0; i < sports.size(); i++)
 		{
@@ -184,6 +196,7 @@ public class View
 			else
 				System.out.println("No ");
 		}
+		return true;
 	}
 	
 }

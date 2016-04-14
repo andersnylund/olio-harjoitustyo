@@ -1,7 +1,7 @@
 //Anders Nylund w101302
 //Jeremias Snellman w101318
 
-package main;
+package data;
 
 import java.util.Vector;
 
