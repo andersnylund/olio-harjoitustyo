@@ -51,20 +51,19 @@ public class Main
 		
 		switch(mainView.printMainMenu())
 		{
-			//AddSport/edit competitor/official
+			//Add sport
 			case 1:	
-				addCompetitor.addEditCompetitor(competitors);
-				break;	
-			//AddSport sport
-			case 2:
 				addSport.addSportAndParticipants(sports, competitors);
-				//sports.addElement(addSport.addSport());
-				break;
-			//AddSport team	
-			case 3:
+				break;	
+			//Add team	
+			case 2:
 				addTeam.addTeamOrMembers(sports, competitors);
 				break;
-			//AddSport/edit points
+			//Add/edit competitor/official
+			case 3:
+				addCompetitor.addEditCompetitor(competitors);
+				break;
+			//Add/edit points
 			case 4:
 				addPoints.addEditPoints();
 				break;

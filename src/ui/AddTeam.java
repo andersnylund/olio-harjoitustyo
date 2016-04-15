@@ -17,7 +17,7 @@ public class AddTeam
 		while(true)
 		{
 			//Asks the user if he wants to add a team or members to a team
-			System.out.println("What do you want to do? \n1. AddSport a team?\n2. AddSport members to a team?\n3. Back to data menu?");
+			System.out.println("What do you want to do? \n1. Add a team?\n2. Add members to a team?\n3. Back to main menu?");
 			int index = Lue.kluku();
 			
 			switch(index)
@@ -47,6 +47,7 @@ public class AddTeam
 		
 		int number;
 		
+		//lets the user select a sport to add a team to.
 		if(!sports.isEmpty())
 			{
 			System.out.print("Select sport to add team to\n>");
@@ -58,13 +59,11 @@ public class AddTeam
 			number = 0;
 			return true;
 			}
-		/**
-		 * Adds a team. Then asks the user if he wants to add team members. If yes, lists all the teams available and lets the 
-		 * user select which team to add member to.
-		 * 
-		 * After that, lists all the competitors and lets the user select which competitor to add.
-		 * 
-		 */
+		//checks if the selected team is within bounds.
+		if(number > sports.size()){
+			System.out.println("Index out of bounds.");
+			return false;
+		}
 		
 		//Checks if the selected sport is a team sport.
 		if(sports.elementAt(number - 1).ifTeamSport())
@@ -76,7 +75,7 @@ public class AddTeam
 			
 			//Lets the user add a member if he user wants to 
 			while(true){
-				System.out.println("AddSport member (Y/N)");
+				System.out.println("Add member (Y/N)");
 				set = Lue.merkki();
 				if(set == 'Y'){
 					addTeamMember(sports,competitors);
@@ -92,7 +91,7 @@ public class AddTeam
 				sports.elementAt(number -1).addTeam(team);
 		}
 		else
-			System.out.println("The sport is not a team sport.\nReturning back to data menu.");
+			System.out.println("The sport is not a team sport.");
 		
 		return true;
 	}
@@ -121,11 +120,11 @@ public class AddTeam
 	
 	public void addMember(Vector<Competitor> competitors)
 	{	
-		char set, newComp;
+		char set;
 		
 		while(true)
 		{
-			System.out.println("AddSport member (Y/N)");
+			System.out.println("Add member (Y/N)");
 			set = Lue.merkki();
 			if(set == 'Y'){
 				
@@ -136,27 +135,17 @@ public class AddTeam
 					//creates  new participant object and lets the user choose
 					//which competitor to add to the participant object
 					participant = new Participant(view.selectCompetitor(competitors, ""));
-					
+					if(participant == null)
+						return;
 					//adds the participant to the team member vector.
 					team.addMember(participant);
 					System.out.println("Member added.");
 				}
-				else
-					//NOT COMPLETE. The user should be able to add a competitor.
-					System.out.print("No competitors found. \nDo you want to add a competitor? (Y/N)\n>");
-					newComp = Lue.merkki();
-					if(newComp == 'Y')
-					{//AddSport new competitor¨
-						AddCompetitor add = new AddCompetitor();
-						add.addCompetitor(competitors);
-						System.out.println();
-					}
-					else if (newComp == 'N')
-						//Team complete
-						System.out.println();
-					else
-						System.out.println("Wrong character input!");
-						
+				else{
+					System.out.print("No competitors found.");
+					break;
+				}
+				
 			}
 			else if(set == 'N'){
 				System.out.println("Team complete.\n");

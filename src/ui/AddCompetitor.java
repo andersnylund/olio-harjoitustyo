@@ -63,6 +63,8 @@ public class AddCompetitor
 	public void editCompetitor(Vector<Competitor> competitors)
 	{
 		competitor = view.selectCompetitor(competitors, "to edit");
+		if(competitor == null)
+			return;
 		competitor.setLastname(view.askLastname());
 		competitor.setFirstname(view.askFirstname());
 		competitor.setAge(view.askAge());

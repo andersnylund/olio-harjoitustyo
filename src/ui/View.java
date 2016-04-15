@@ -64,10 +64,10 @@ public class View
 	
 	public int printMainMenu()
 	{
-		System.out.println("\n1. AddSport/edit competitors or officials");
-		System.out.println("2. AddSport sport and add participants to sport");
-		System.out.println("3. AddSport teams");
-		System.out.println("4. AddSport/edit points");
+		System.out.println("\n1. Add sport and add participants to sport");
+		System.out.println("2. Add teams");
+		System.out.println("3. Add/edit competitors or officials");
+		System.out.println("4. Add/edit points");
 		System.out.println("5. Show results/save current results in competition");
 		System.out.println("6. Quit program");
 		System.out.print("> ");
@@ -97,13 +97,24 @@ public class View
 	
 	public Competitor selectCompetitor(Vector<Competitor> competitors, String message)
 	{	
-		listCompetitors(competitors);
+		//lists the competitors and returns null if no competitors was found
+		if(!listCompetitors(competitors))
+			return null;
 		
 		while(true)
 		{
 			System.out.print("Select a competitor " + message + "\n>");
 			int index= Lue.kluku();
 			
+			//checks if the number is bigger than the size of the array.
+			//returns null if true.
+			if(index > competitors.size()){
+				System.out.println("Index out of bounds. ");
+				return null;
+			}
+			
+			//Checks if the chosen object is null.
+			//if not, returns the object.
 			if(competitors.elementAt(index - 1)!=null)
 			{
 				return competitors.elementAt(index - 1);
@@ -114,7 +125,8 @@ public class View
 	}
 	
 	public Team selectTeam(Vector<Team> teams)
-	{
+	{	
+		//lists all teams and returns null if no teams were found.
 		if(!listTeams(teams)){
 			return null;
 		}
@@ -124,6 +136,15 @@ public class View
 			System.out.print("Select a team\n>");
 			int index = Lue.kluku();
 			
+			//checks if the number is bigger than the size of the array.
+			//returns null if true.
+			if(index > teams.size()){
+				System.out.println("Index out of bounds. ");
+				return null;
+			}
+			
+			//Checks if the chosen object is null.
+			//if not, returns the object.
 			if(teams.elementAt(index - 1)!= null)
 			{
 				return teams.elementAt(index - 1);
@@ -133,14 +154,25 @@ public class View
 	}
 	
 	public Sport selectSport(Vector<Sport> sports)
-	{
-		listSports(sports);
+	{	
+		//lists all sports and returns null if no sports were found.
+		if(!listSports(sports))
+			return null;
 		
 		while (true)
 		{	
 			System.out.print("Select a sport\n>");
 			int index = Lue.kluku();
 			
+			//checks if the number is bigger than the size of the array.
+			//returns null if true.
+			if(index > sports.size()){
+				System.out.println("Index out of bounds. ");
+				return null;
+			}
+			
+			//Checks if the chosen object is null.
+			//if not, returns the object.
 			if(sports.elementAt(index - 1)!= null)
 			{
 				return sports.elementAt(index - 1);
@@ -151,8 +183,10 @@ public class View
 	
 	public boolean listCompetitors(Vector<Competitor> competitors)
 	{	
-		if(competitors.isEmpty())
+		if(competitors.isEmpty()){
+			System.out.println("No competitors found.");
 			return false;
+		}
 		System.out.println("List of all competitors: ");
 		for(int i = 0; i < competitors.size(); i++)
 		{
@@ -177,8 +211,10 @@ public class View
 	
 	public boolean listSports(Vector<Sport> sports)
 	{	
-		if(sports.isEmpty())
+		if(sports.isEmpty()){
+			System.out.println("No sports found.");
 			return false;
+		}
 		System.out.println("List of all sports:");
 		for(int i = 0; i < sports.size(); i++)
 		{

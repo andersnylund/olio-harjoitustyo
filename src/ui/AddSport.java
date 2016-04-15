@@ -10,6 +10,8 @@ public class AddSport
 {	
 	private View view = new View();
 	
+	private Sport sport;
+	private Competitor competitor;
 	
 	private boolean teamSport, leagueSport;
 	
@@ -106,8 +108,19 @@ public class AddSport
 			return;
 		}
 		while(true)
-		{
-			view.selectSport(sports).addParticipant(view.selectCompetitor(competitors, ""));
+		{	
+			//returns if the selected sport is null
+			sport = view.selectSport(sports);
+			if(sport == null)
+				return;
+			
+			//returns if the selected competitor is null.
+			competitor = view.selectCompetitor(competitors, "");
+			if(sport == null)
+				return;
+			
+			sport.addParticipant(competitor);
+
 			break;
 		}
 	}
