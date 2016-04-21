@@ -39,7 +39,7 @@ public class AddPoints
 	
 	public boolean addPoints(Vector<Sport>sports)
 	{
-		view.listParticipants(view.selectSport(sports));
+		view.listSportandParticipants(view.selectSport(sports));
 		return false;
 	}
 	
