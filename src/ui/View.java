@@ -203,7 +203,7 @@ public class View
 	public boolean listCompetitors(Vector<Competitor> competitors)
 	{	
 		if(competitors.isEmpty()){
-			System.out.println("No competitors found.");
+			System.out.println("No competitors found. Create a new competitor in the main menu.");
 			return false;
 		}
 		System.out.println("List of all competitors: ");

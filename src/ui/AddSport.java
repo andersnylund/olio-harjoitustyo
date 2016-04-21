@@ -116,10 +116,11 @@ public class AddSport
 			
 			//returns if the selected competitor is null.
 			competitor = view.selectCompetitor(competitors, "");
-			if(sport == null)
-				return;
 			
-			sport.addParticipant(competitor);
+			//add a participant to the sport
+			if(competitor!= null){
+				sport.addParticipant(competitor);
+			}
 
 			break;
 		}

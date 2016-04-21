@@ -13,10 +13,6 @@ public class ShowAndSave {
 	
 	private View view = new View();
 	
-	public ShowAndSave(Vector<Sport> sports, Vector<Competitor> competitors){
-		printAllInfo(sports);
-	}
-	
 	public void printAllInfo(Vector<Sport> sports){
 		for(int i = 0; i < sports.size(); i++)
 		{
@@ -30,7 +26,7 @@ public class ShowAndSave {
 			else
 				for(int j = 0; j <sports.elementAt(i).nroOfParticipants(); j++)
 				{
-					
+					view.listSportandParticipants(sports.elementAt(j));
 				}
 		}
 	}

@@ -23,6 +23,7 @@ public class Main
 	private static AddCompetitor addCompetitor = new AddCompetitor();
 	private static AddSport addSport = new AddSport();
 	private static AddPoints addPoints = new AddPoints();
+	private static ShowAndSave showAndSave = new ShowAndSave();
 	
 	
 	public static void main(String[] args) 
@@ -69,7 +70,7 @@ public class Main
 				break;
 			//Show results/ save current results in the competition
 			case 5:
-				//showAndSave = new ShowAndSave();
+				showAndSave.printAllInfo(sports);
 			
 				break;
 			//quit program
