@@ -191,10 +191,11 @@ public class View
 			return false;
 		}	
 		
-		System.out.print(sport.getName());
+		System.out.println("Sport: " + sport.getName());
+		System.out.println("\tParticipants: ");
 		for(int i = 0; i<sport.getParticipantsVector().size();i++)
 		{
-			System.out.println("\t"+(i+1)+sport.getParticipantsVector().elementAt(i).toString());
+			System.out.println("\t"+sport.getParticipantsVector().elementAt(i).toString());
 		}
 		
 		return true;

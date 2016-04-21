@@ -71,6 +71,8 @@ public class AddTeam
 			//creates a new team object.
 			team = new Team(view.setTeamName());
 			
+			sports.elementAt(number -1).addTeam(team);
+			
 			char set;
 			
 			//Lets the user add a member if he user wants to 
@@ -78,7 +80,8 @@ public class AddTeam
 				System.out.println("Add member (Y/N)");
 				set = Lue.merkki();
 				if(set == 'Y'){
-					addTeamMember(sports,competitors);
+					if(!addTeamMember(sports,competitors))
+						break;
 				}
 				else if(set == 'N'){
 					System.out.println("Team complete.\n");
@@ -87,8 +90,7 @@ public class AddTeam
 				else
 					System.out.println("Wrong character input!");
 				}
-			if(team!=null)
-				sports.elementAt(number -1).addTeam(team);
+				
 		}
 		else
 			System.out.println("The sport is not a team sport.");
@@ -100,6 +102,8 @@ public class AddTeam
 	{
 		//lists all the sports and lets the user select which sport to add a team member to.
 		sport = view.selectSport(sports);
+		if(sport == null)
+			return false;
 		
 		if(!sport.ifTeamSport())
 		{	
