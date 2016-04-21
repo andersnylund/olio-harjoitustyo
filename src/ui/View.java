@@ -177,11 +177,21 @@ public class View
 		}
 	}
 	
-	public boolean listParticipants(Sport sport)
+	public boolean listSportandParticipants(Sport sport)
 	{
-		//sport.getParticipant(index)
+		if(sport.getParticipantsVector().isEmpty())
+		{
+			System.out.println("No participants");
+			return false;
+		}	
 		
-		return false;
+		System.out.print(sport.getName());
+		for(int i = 0; i<sport.getParticipantsVector().size();i++)
+		{
+			System.out.println("\t"+(i+1)+sport.getParticipantsVector().elementAt(i).toString());
+		}
+		
+		return true;
 	}
 	
 	public boolean listCompetitors(Vector<Competitor> competitors)
