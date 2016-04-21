@@ -69,6 +69,8 @@ public class Main
 				break;
 			//Show results/ save current results in the competition
 			case 5:
+				//showAndSave = new ShowAndSave();
+			
 				break;
 			//quit program
 			case 6:

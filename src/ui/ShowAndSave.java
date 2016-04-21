@@ -1,5 +1,7 @@
 package ui;
 
+import java.util.Vector;
+
 import data.*;
 
 public class ShowAndSave {
@@ -9,12 +11,17 @@ public class ShowAndSave {
 	private League league;
 	private Competitor competitor;
 	
-	public ShowAndSave(Sport sport, Team team, League league, Competitor competitor){
+	private View view = new View();
 	
-		this.sport = sport;
-		this.team = team;
-		this.league = league;
-		this.competitor = competitor;
+	public ShowAndSave(Vector<Sport> sports, Vector<Competitor> competitors){
+		printAllInfo(sports);
+	}
+	
+	public void printAllInfo(Vector<Sport> sports){
+		for(int i = 0; i < sports.size(); i++)
+		{
+			
+		}
 	}
 
 }

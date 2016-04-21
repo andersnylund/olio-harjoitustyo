@@ -30,6 +30,10 @@ public class Participant {
 	public int getAge () { return competitor.getAge(); }
 	public int getNumber () { return competitor.getNumber(); }
 	
+	public Vector<Competitor> getCompetitorVector(){
+		return competitors;
+	}
+	
 	@Override
 	public String toString(){
 		if(score != 0)

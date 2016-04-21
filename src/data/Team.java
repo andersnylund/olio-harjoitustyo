@@ -51,7 +51,7 @@ public class Team {
 		}
 	}
 	
-	public double getScorTeam(){ return scoreTeam; }
+	public double getScoreTeam(){ return scoreTeam; }
 	
 	public boolean deleteMember(String lastName, String firstName){
 		int index = searchMember(lastName, firstName);
@@ -76,5 +76,7 @@ public class Team {
 	public String getName(){
 		return name;
 	}
+	
+	public Vector<Participant> getTeamMembers(){ return teamMembers;}
 
 }

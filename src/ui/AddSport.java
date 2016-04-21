@@ -124,4 +124,6 @@ public class AddSport
 			break;
 		}
 	}
+	
+	public Sport getSport(){ return sport;}
 }

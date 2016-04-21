@@ -89,11 +89,7 @@ public class View
 	}
 	
 
-	//prints person
-	public void printInfo()
-	{
-		
-	}	
+
 	
 	public Competitor selectCompetitor(Vector<Competitor> competitors, String message)
 	{	
@@ -208,6 +204,32 @@ public class View
 		}
 		return true;
 	}
+	
+	public boolean listTeams(Sport sport)
+	{
+		if(sport == null)
+			return false;
+		System.out.println("Sport: " + sport.getName());
+		System.out.println("\tTeams: ");
+		
+		for(int i = 0; i < sport.nroOfTeams(); i++)
+		{
+			System.out.println("\t" + sport.getTeam(i).getName());
+		}
+		return true;
+	}
+	
+	//prints a team
+	public void listTeamAndMembers(Team team)
+	{
+		System.out.println("\tTeam: " + team.getName());
+		System.out.println("\tScore: " + String.format("%.1f)", team.getScoreTeam()));
+		System.out.println("\t\tTeam members:");
+		
+		for(int i = 0; i < team.nroOfMembers(); i++){
+			System.out.println("\t\t" + team.getMember(i).toString());
+		}
+	}	
 	
 	public boolean listSports(Vector<Sport> sports)
 	{	

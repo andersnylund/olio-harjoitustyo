@@ -97,7 +97,16 @@ public class Sport
 		return teams;
 	}
 	
-
+	public Vector<Participant> getParticipantsVector()
+	{
+		return participants;
+	}
+	
+	public Vector<League> getLeagueVector()
+	{
+		return leagues;
+	}
+	
 	@Override
 	public String toString(){
 		return name;
