@@ -81,15 +81,10 @@ public class Sport
 	public boolean ifTeamSport(){return teamSport;}
 	public boolean ifLeagueSport(){return leagueSport;}
 	
-	public boolean addParticipant(Competitor competitor){
+	public void addParticipant(Competitor competitor)
+	{
 		Participant participant = new Participant(competitor);
-		
-		boolean added = false;
-		for(int i = 0; i < leagues.size(); i++)
-		{
-			added |= leagues.get(i).addParticipant(participant);
-		}
-		return added;
+		participants.addElement(participant);
 	}
 	
 	public Vector<Team> getTeamVector()

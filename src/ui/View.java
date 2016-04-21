@@ -177,6 +177,12 @@ public class View
 		}
 	}
 	
+	public Participant selectParticipant(Vector<Participant>participants, Sport sport)
+	{
+		if(!listSportandParticipants(sport))
+			return null;
+	}
+	
 	public boolean listSportandParticipants(Sport sport)
 	{
 		if(sport.getParticipantsVector().isEmpty())
@@ -260,10 +266,10 @@ public class View
 			System.out.print((i+1) + ". " + sports.elementAt(i) + ", Teamsport: ");
 			if(sports.elementAt(i).ifTeamSport())
 			{
-				System.out.print("Yes ");
+				System.out.print("Yes ,");
 			}
 			else
-				System.out.print("No ");
+				System.out.print("No ,");
 			System.out.print("Leaguesport: ");
 			if(sports.elementAt(i).ifLeagueSport())
 			{
