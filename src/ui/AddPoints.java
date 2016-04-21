@@ -14,9 +14,9 @@ public class AddPoints
 	{
 		while(true)
 		{
-			System.out.println("1. Add points");
-			System.out.println("2. Edit points");
-			System.out.println("3. Back to main menu");
+			System.out.println("1. Add/edit an individuals points");
+			System.out.println("2. Add/edit a teams points");
+			System.out.println("2. Back to main menu");
 			System.out.print(">");
 			
 			int set = Lue.kluku();
@@ -24,27 +24,29 @@ public class AddPoints
 			switch(set)
 			{
 			case 1:
-				addPoints(sports);
+				addIndividualsPoints(sports);
 				break;
 			case 2:
-				editPoints(sports);
-				break;
+				addTeamsPoints(sports);
 			case 3:
 				return true;
 			default:
-				System.out.println("Wrong option. Choose an option between 1 and 3.");
+				System.out.println("Wrong option. Choose a valid option.");
 			}
 		}
 	}
 	
-	public boolean addPoints(Vector<Sport>sports)
+	public boolean addIndividualsPoints(Vector<Sport>sports)
 	{
-		view.listSportandParticipants(view.selectSport(sports));
+		view.selectParticipant(view.selectSport(sports)).setScore(view.askScore());
 		return false;
 	}
 	
-	public boolean editPoints(Vector<Sport>sports)
+	public boolean addTeamsPoints(Vector<Sport>sports)
 	{
+		view.selectTeam(view.selectSport(sports).getTeamVector()).setScoreTeam();
+		
 		return false;
 	}
+	
 }

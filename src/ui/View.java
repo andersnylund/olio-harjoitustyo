@@ -27,6 +27,13 @@ public class View
 		return first;
 	}
 	
+	public double askScore()
+	{
+		System.out.print("Score\n>");
+		double score = Lue.dluku();
+		return score;
+	}
+	
 	public int askAge()
 	{
 		System.out.print("Age\n>");
@@ -177,11 +184,33 @@ public class View
 		}
 	}
 	
-	/*public Participant selectParticipant(Vector<Participant>participants, Sport sport)
+	public Participant selectParticipant(Sport sport)
 	{
 		if(!listSportandParticipants(sport))
 			return null;
-	}*/
+		
+		while(true)
+		{
+			System.out.print("Select a participant\n>");
+			int index = Lue.kluku();
+			
+			//checks if the number is bigger than the size of the array.
+			//returns null if true.
+			if(index > sport.getParticipantsVector().size())
+			{
+				System.out.println("Index out of bounds. ");
+				return null;
+			}
+			
+			//Checks if the chosen object is null.
+			//if not, returns the object.
+			if(sport.getParticipantsVector().elementAt(index - 1)!= null)
+			{
+				return sport.getParticipantsVector().elementAt(index - 1);
+			}
+			System.out.println("Participant not found. Choose participant from list.");
+		}
+	}
 	
 	public boolean listSportandParticipants(Sport sport)
 	{
