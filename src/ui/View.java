@@ -177,11 +177,11 @@ public class View
 		}
 	}
 	
-	public Participant selectParticipant(Vector<Participant>participants, Sport sport)
+	/*public Participant selectParticipant(Vector<Participant>participants, Sport sport)
 	{
 		if(!listSportandParticipants(sport))
 			return null;
-	}
+	}*/
 	
 	public boolean listSportandParticipants(Sport sport)
 	{
