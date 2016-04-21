@@ -65,7 +65,7 @@ public class Main
 				break;
 			//Add/edit points
 			case 4:
-				addPoints.addEditPoints();
+				addPoints.addEditPoints(sports, competitors);
 				break;
 			//Show results/ save current results in the competition
 			case 5:
