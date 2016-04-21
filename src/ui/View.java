@@ -177,6 +177,13 @@ public class View
 		}
 	}
 	
+	public boolean listParticipants(Sport sport)
+	{
+		//sport.getParticipant(index)
+		
+		return false;
+	}
+	
 	public boolean listCompetitors(Vector<Competitor> competitors)
 	{	
 		if(competitors.isEmpty()){
