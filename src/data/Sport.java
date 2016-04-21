@@ -102,6 +102,8 @@ public class Sport
 		return participants;
 	}
 	
+	public int nroOfParticipants(){return participants.size();}
+	
 	public Vector<League> getLeagueVector()
 	{
 		return leagues;
