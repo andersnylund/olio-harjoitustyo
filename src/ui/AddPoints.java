@@ -16,7 +16,7 @@ public class AddPoints
 		{
 			System.out.println("1. Add/edit an individuals points");
 			System.out.println("2. Add/edit a teams points");
-			System.out.println("2. Back to main menu");
+			System.out.println("3. Back to main menu");
 			System.out.print(">");
 			
 			int set = Lue.kluku();
@@ -38,15 +38,24 @@ public class AddPoints
 	
 	public boolean addIndividualsPoints(Vector<Sport>sports)
 	{
+		if(sports.isEmpty())
+		{
+			System.out.println("No sports found. Add a sport and try again");
+			return false;
+		}	
 		view.selectParticipant(view.selectSport(sports)).setScore(view.askScore());
-		return false;
+		return true;
 	}
 	
 	public boolean addTeamsPoints(Vector<Sport>sports)
 	{
+		if(sports.isEmpty())
+		{
+			System.out.println("No team found. Add a team and try again");
+			return false;
+		}
 		view.selectTeam(view.selectSport(sports).getTeamVector()).setScoreTeam();
-		
-		return false;
+		return true;
 	}
 	
 }
