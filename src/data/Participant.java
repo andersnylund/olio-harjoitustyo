@@ -22,66 +22,92 @@ public class Participant {
 	
 	/**
 	 * The constructor that makes a competitor a participant
-	 * @param competitor
+	 * @param competitor 
 	 */
-	public Participant(Competitor competitor){
-		
+	public Participant(Competitor competitor)
+	{
 		this.competitor = competitor;
 		competitors = new Vector<Competitor>();
 	}
 	/**
 	 * Setter for participants score
-	 * @param score
+	 * @param score The score to be set for the participant
 	 */
-	public void setScore (double score){ this.score = score;}
+	public void setScore (double score)
+	{ 
+		this.score = score;
+	}
 	/**
 	 * Getter for participants score
-	 * @return
+	 * @return Returns the score of participant
 	 */
-	public double getScore(){ return score; }
+	public double getScore()
+	{ 
+		return score; 
+	}
 	/**
 	 * Getter for competitor
-	 * @return competitor Returns the competitor
+	 * @return Returns the competitor
 	 */
-	public Competitor getCompetitor(){ return competitor;}
+	public Competitor getCompetitor()
+	{ 
+		return competitor;
+	}
 	/**
 	 * Getter for competitors last name
-	 * @return lastname Returns lastname
+	 * @return Returns lastname
 	 */
-	public String getLastname () { return competitor.getLastname (); }
+	public String getLastname () 
+	{ 
+		return competitor.getLastname (); 
+	}
 	/**
 	 * Getter for competitors first name
-	 * @return firstname Returns firstname
+	 * @return Returns firstname
 	 */
-	public String getFirstname () { return competitor.getFirstname (); }
+	public String getFirstname () 
+	{ 
+		return competitor.getFirstname (); 
+	}
 	/**
 	 * Getter for competitors gender
-	 * @return gender Returns gender
+	 * @return Returns gender
 	 */
-	public String getGender () { return competitor.getGender (); }
+	public String getGender () 
+	{
+		return competitor.getGender (); 
+	}
 	/**
 	 * Getter for competitors age
-	 * @return age Returns age
+	 * @return Returns age
 	 */
-	public int getAge () { return competitor.getAge(); }
+	public int getAge () 
+	{ 
+		return competitor.getAge(); 
+	}
 	/**
 	 * Getter for competitors competitor number
-	 * @return number Returns cometitor number
+	 * @return Returns cometitor number
 	 */
-	public int getNumber () { return competitor.getNumber(); }
+	public int getNumber () 
+	{ 
+		return competitor.getNumber(); 
+	}
 	/**
 	 * Getter for the whole comeptitor Vector
-	 * @return competitors Returns competitor vector
+	 * @return Returns competitor vector
 	 */
-	public Vector<Competitor> getCompetitorVector(){
+	public Vector<Competitor> getCompetitorVector()
+	{
 		return competitors;
 	}
 	/**
 	 * Converting competitor information to a String
-	 * @return String Returns the competitor number and the first and last name as a string and points
+	 * @return Returns the competitor number and the first and last name as a string and points
 	 */
 	@Override
-	public String toString(){
+	public String toString()
+	{
 		if(score != 0)
 			return competitor.toString() + "\t\tScore: " + Double.toString(score);
 		return competitor.toString();

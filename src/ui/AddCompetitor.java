@@ -9,6 +9,10 @@ import java.util.Vector;
 import data.*;
 import uva.Lue;
 
+/**
+ * 	For adding and editing competitors
+ * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
+ */
 public class AddCompetitor 
 {
 	private View view = new View();
@@ -18,15 +22,19 @@ public class AddCompetitor
 	 * Method to add competitors (persons) to the competition. 
 	 * These competitors are used both as competitors and officials in different sports
 	 * @param competitors
-	 * @return
+	 * @return The modified vector of Competitors
 	 */
 	public Vector<Competitor> addEditCompetitor(Vector <Competitor> competitors)
 	{
-		//lists all the competitors saved in the program
-		//when printed the number in front of the name is the competitor-number
+		/**
+		 * Aists all the competitors saved in the program
+		 * When printed the number in front of the name is the competitor number
+		 */
 		view.listCompetitors(competitors);
 		
-		//ask user to add or edit competitors
+		/**
+		 * Ask user to add or edit competitors
+		 */
 		System.out.println("\n1. Add competitor or official");
 		System.out.println("2. Edit competitor or official");
 		System.out.println("3. Back to main menu");
@@ -36,13 +44,17 @@ public class AddCompetitor
 		while(true)
 		{
 			set = Lue.merkki();
-			//adding new competitor to the "competitor-vector" in Main-class
+			/**
+			 * adding new competitor to the "competitor-vector" in Main-class
+			 */
 			if(set == '1')
 			{
 				addCompetitor(competitors);
 				break;
 			}
-			//editing competitor in the "competitor-vector" in Main-class
+			/**
+			 * editing competitor in the "competitor-vector" in Main-class
+			 */
 			else if(set == '2')
 			{
 				editCompetitor(competitors);
@@ -54,12 +66,14 @@ public class AddCompetitor
 			else
 				System.out.println("Wrong character input");
 			}
-		//returns the vector of competitors to the Main-class
+		/**
+		 * returns the vector of competitors to the Main-class
+		 */
 		return competitors;
 	}
 	/**
-	 * 
-	 * @param competitors
+	 * Adding a new competitor to the competitors Vector
+	 * @param competitors Vector of competitors
 	 */
 	public void addCompetitor(Vector<Competitor> competitors)
 	{
@@ -74,8 +88,8 @@ public class AddCompetitor
 		competitors.add(competitor);
 	}
 	/**
-	 * 
-	 * @param competitors
+	 * For editing a competitor already in competitors Vector
+	 * @param competitors Vector of competitors
 	 */
 	public void editCompetitor(Vector<Competitor> competitors)
 	{

@@ -11,7 +11,7 @@ import java.util.Vector;
 import data.*;
 
 /**
- * 
+ * Main menu
  * @author Anders Nylund w101302, Jeremias Snellman w101318
  *
  */

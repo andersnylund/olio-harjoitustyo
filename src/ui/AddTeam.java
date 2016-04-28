@@ -9,6 +9,11 @@ import java.util.Vector;
 import data.*;
 import uva.Lue;
 
+/**
+ * For adding teams
+ * @author Anders Nylund w101302, Jeremias Snellman w101318
+ *
+ */
 public class AddTeam 
 {
 	private View view = new View();

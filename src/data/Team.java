@@ -28,27 +28,27 @@ public class Team {
 	
 	/**
 	 * 
-	 * @param name
+	 * @param name 
 	 */
-	public Team(String name){
-		
+	public Team(String name)
+	{
 		teamMembers = new Vector<Participant>();
 		this.name = name;
 	}
 	/**
-	 * 
-	 * @param participant
+	 * Add member to team
+	 * @param participant Participant to add to team
 	 */
-	public void addMember(Participant participant){
+	public void addMember(Participant participant)
+	{
 		teamMembers.add(participant);
 	}
 	
 	/**
 	 * Search for member. If member found, the method return 1 else, it returns -1
-	 * 
 	 * @param lastName
 	 * @param firstName
-	 * @return
+	 * @return Returns 1 if member is found, else -1
 	 */
 	public int searchMember(String lastName, String firstName){
 		for (int i = 0; i < teamMembers.size (); ++i)
@@ -63,25 +63,26 @@ public class Team {
 		return -1;
 	}
 	/**
-	 * 
-	 * @param score
+	 * Setter for the team score
+	 * @param score The score to be set ofr the team
 	 */
 	public void setScoreTeam(double score)
 	{
 		scoreTeam = score;
 	}
 	/**
-	 * 
-	 * @return
+	 * Getter for the team score
+	 * @return The score of the team
 	 */
 	public double getScoreTeam(){ return scoreTeam; }
 	/**
 	 * 
-	 * @param lastName
-	 * @param firstName
-	 * @return
+	 * @param lastName Last name of person to be deleted
+	 * @param firstName First name of person to be deleted
+	 * @return True if delete was successul, else false
 	 */
-	public boolean deleteMember(String lastName, String firstName){
+	public boolean deleteMember(String lastName, String firstName)
+	{
 		int index = searchMember(lastName, firstName);
 		if(index < 0) return false;
 		teamMembers.remove(index);
@@ -90,41 +91,53 @@ public class Team {
 	
 	/**
 	 * 
-	 * @param participant
-	 * @return
+	 * @param participant The participant to be deleted from team
+	 * @return True if deleting was successful, else false
 	 */
-	public boolean deleteMember(Participant participant){
+	public boolean deleteMember(Participant participant)
+	{
 		return deleteMember(participant.getLastname(), participant.getFirstname());
 	}
 	/**
 	 * 
-	 * @return
+	 * @return Number of members
 	 */
-	public int nroOfMembers(){ return teamMembers.size(); }
+	public int nroOfMembers()
+	{ 
+		return teamMembers.size(); 
+	}
 	/**
-	 * 
-	 * @param index
-	 * @return
+	 * Getter for member
+	 * @param index Index of participant to get
+	 * @return Participant with index
 	 */
-	public Participant getMember(int index){ return teamMembers.get(index); }
+	public Participant getMember(int index)
+	{ 
+		return teamMembers.get(index); 
+	}
 	/**
-	 * 
-	 * @param name
+	 * Setter for name of team
+	 * @param name Name of team
 	 */
-	public void setName(String name){
+	public void setName(String name)
+	{
 		this.name = name;
 	}
 	/**
-	 * 
-	 * @return
+	 * Getter for teams name
+	 * @return Name of team
 	 */
-	public String getName(){
+	public String getName()
+	{
 		return name;
 	}
 	/**
-	 * 
-	 * @return
+	 * Getter for team Vector
+	 * @return Vector of teammembers
 	 */
-	public Vector<Participant> getTeamMembers(){ return teamMembers;}
+	public Vector<Participant> getTeamMembers()
+	{ 
+		return teamMembers;
+	}
 
 }

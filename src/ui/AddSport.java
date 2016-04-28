@@ -6,10 +6,15 @@ package ui;
 
 import uva.Lue;
 
+
 import java.util.Vector;
 
 import data.*;
-
+/**
+ * For adding sports
+ * @author Anders Nylund w101302, Jeremias Snellman w101318
+ *
+ */
 public class AddSport 
 {	
 	private View view = new View();
@@ -64,10 +69,14 @@ public class AddSport
 	public void addSport(Vector<Sport> sports)
 	{
 		char set;
-		//Ask the user to say if the new sport is a team sport
+		/**
+		 * Ask the user to say if the new sport is a team sport
+		 */
 		System.out.println("Is it a team sport? (Y/N)");
 	
-		//waits for the user to insert either Y or N 
+		/**
+		 * waits for the user to insert either Y or N 
+		 */
 		while(true)
 		{
 			set = Lue.merkki();
@@ -103,15 +112,21 @@ public class AddSport
 		}
 		while(true)
 		{	
-			//returns if the selected sport is null
+			/**
+			 * returns if the selected sport is null
+			 */
 			sport = view.selectSport(sports);
 			if(sport == null)
 				return;
 			
-			//returns if the selected competitor is null.
+			/**
+			 * returns if the selected competitor is null.
+			 */
 			competitor = view.selectCompetitor(competitors, "");
 			
-			//add a participant to the sport
+			/**
+			 * add a participant to the sport
+			 */
 			if(competitor!= null){
 				sport.addParticipant(competitor);
 			}
@@ -123,5 +138,8 @@ public class AddSport
 	 * 
 	 * @return
 	 */
-	public Sport getSport(){ return sport;}
+	public Sport getSport()
+	{
+		return sport;
+	}
 }

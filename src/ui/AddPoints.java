@@ -10,13 +10,20 @@ import java.util.Vector;
 
 import data.*;
 
+/**
+ * 	For adding points to participants and teams
+ * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
+ */
 public class AddPoints 
 {
+	/**
+	 * An interface
+	 */
 	View view = new View();
 	/**
-	 * 
-	 * @param sports
-	 * @return
+	 * Prompt to user for adding or editing points
+	 * @param sports Vector of sports
+	 * @return True if user wants to cancel operation
 	 */
 	public boolean addEditPoints(Vector<Sport>sports)
 	{
@@ -45,8 +52,8 @@ public class AddPoints
 	}
 	/**
 	 * 
-	 * @param sports
-	 * @return
+	 * @param sports Vector of sports
+	 * @return True if adding points was successful, false if no sports were found
 	 */
 	public boolean addIndividualsPoints(Vector<Sport>sports)
 	{
@@ -60,8 +67,8 @@ public class AddPoints
 	}
 	/**
 	 * 
-	 * @param sports
-	 * @return
+	 * @param sports Vector of sports
+	 * @return True if adding was successful, false if no teams were found
 	 */
 	public boolean addTeamsPoints(Vector<Sport>sports)
 	{
