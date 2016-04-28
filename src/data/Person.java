@@ -80,6 +80,6 @@ public class Person
 	//returns the first and last name as a string
 	@Override
 	public String toString(){
-		return "Name: " + firstName + " " + lastName +"\tAge: "+age+"\tGender: "+gender;
+		return "Name: " + firstName + " " + lastName +"\tAge: "+Integer.toString(age)+"\tGender: "+gender;
 	}
 }

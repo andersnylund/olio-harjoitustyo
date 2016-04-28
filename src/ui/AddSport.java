@@ -13,7 +13,7 @@ public class AddSport
 	private Sport sport;
 	private Competitor competitor;
 	
-	private boolean teamSport, leagueSport;
+	private boolean teamSport;
 	
 	
 	public void addSportAndParticipants(Vector<Sport> sports, Vector<Competitor> competitors)

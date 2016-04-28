@@ -71,11 +71,11 @@ public class View
 	
 	public int printMainMenu()
 	{
-		System.out.println("\n1. Add sport and add participants to sport");
-		System.out.println("2. Add teams");
-		System.out.println("3. Add/edit competitors or officials");
-		System.out.println("4. Add/edit points");
-		System.out.println("5. Show results/save current results in competition");
+		System.out.println("\n1. Sports");
+		System.out.println("2. Teams");
+		System.out.println("3. Competitors/Officials");
+		System.out.println("4. Points");
+		System.out.println("5. Results/save");
 		System.out.println("6. Quit program");
 		System.out.print("> ");
 		return Lue.kluku();

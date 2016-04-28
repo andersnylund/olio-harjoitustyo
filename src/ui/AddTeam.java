@@ -17,7 +17,7 @@ public class AddTeam
 		while(true)
 		{
 			//Asks the user if he wants to add a team or members to a team
-			System.out.println("What do you want to do? \n1. Add a team?\n2. Add members to a team?\n3. Back to main menu?");
+			System.out.println("\n1. Add a team\n2. Add members to a team\n3. Back to main menu");
 			int index = Lue.kluku();
 			
 			switch(index)
