@@ -1,4 +1,4 @@
-/*
+/**
  * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
  */
 
@@ -19,7 +19,7 @@ public class ShowAndSave
 	private View view = new View();
 	
 	
-	/*
+	/**
 	 * Prints all the info that is saved in the program at the current state
 	 */
 	public void printAllInfo(Vector<Sport> sports){

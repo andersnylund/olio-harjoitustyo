@@ -1,19 +1,27 @@
-/*
- * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
+/**
+ * Inherits Person-class and is used to create new competitors
+ * @author Anders Nylund w101302, Jeremias Snellman w101318
+ * @brief Inherits Person-class. Used to create new competitors
  */
-
 package data;
 
+/**
+ * Inherits Person-class and is used to create new competitors
+ * @author Anders Nylund w101302, Jeremias Snellman w101318
+ * @brief Inherits Person-class. Used to create new competitors
+ */
 public class Competitor extends Person
 {	
-	/*
-	 * the competitor number, which each competitor will have
+	/**
+	 * The competitor number, which each competitor will have
 	 */
 	private int competitorNumber;
-	
+	/**
+	 * Number used to assign the competitor number
+	 */
 	private static int nextNumber = 1;
 	
-	/*
+	/**
 	 * The constructor that sets a competitor-number when creating a new competitor
 	 */
 	public Competitor(){
@@ -21,7 +29,7 @@ public class Competitor extends Person
 		updateNumber();
 	}
 	
-	/*
+	/**
 	 * Called when a new competitor is created
 	 * Updates the competition number
 	 */
@@ -29,8 +37,8 @@ public class Competitor extends Person
 		nextNumber++;
 	}
 	
-	/*
-	 * Returns the competitor number
+	/**
+	 * Getter for competitor number
 	 * @return int Returns the competitor number
 	 */
 	public int getNumber()
@@ -38,8 +46,8 @@ public class Competitor extends Person
 		return competitorNumber;
 	}
 	
-	/*
-	 * Returns the competitor number plus the first and last name as a string
+	/**
+	 * Converting competitor information to a String
 	 * @return String Returns the competitor number plus the first and last name as a string
 	 */
 	@Override

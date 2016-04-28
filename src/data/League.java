@@ -1,4 +1,4 @@
-/*
+/**
  * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
  */
 package data;
@@ -6,22 +6,34 @@ import java.util.*;
 
 public class League 
 {
-	//limit for which league the competitor should belong to.
+	/**
+	 * limit for which league the competitor should belong to.
+	 */
 	public static final int JUNIORI_LIMIT = 20;
-	//name of the league
+	/**
+	 * name of the league
+	 */
 	private String name;
 	
-	//age limit of the league
+	/**
+	 * age limit of the league
+	 */
 	private int ageLimit;
 	
-	//Is it only for women?
+	/**
+	 * Is it only for women?
+	 */
 	private boolean womenLeague = false;
 	
-	//vector containing all the participants in the league
+	/**
+	 * vector containing all the participants in the league
+	 */
 	private Vector<Participant> participants;
 	
 	
-	//Constructor
+	/**
+	 * Constructor that creates a new participant-vector upon creation
+	 */
 	public League(){
 		
 		//creating the vector
@@ -38,6 +50,11 @@ public class League
 		this.womenLeague = womenLeague;
 	}
 	
+	/**
+	 * 
+	 * @param name The name of the league
+	 * @return Returns League-object
+	 */
 	public static League buildLeague(String name){
 		if(name == null) return null;
 		
@@ -75,6 +92,11 @@ public class League
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param index
+	 * @return
+	 */
 	public boolean editParticipant(int index){	
 		
 		participants.get(index);
@@ -83,27 +105,49 @@ public class League
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param index
+	 * @return
+	 */
 	public boolean deleteParticipant(int index)
 	{
 		//NOT complete
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public int nroOfParticipants(){ return participants.size();	}
-	
+	/**
+	 * 
+	 * @param index
+	 * @return
+	 */
 	public Participant getParticipant(int index){ return participants.get(index);}
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public String getName()
 	{
 		return name;
 	}
-	
+	/**
+	 * 
+	 * @param name
+	 * @return
+	 */
 	public boolean setName(String name)
 	{
 		this.name = name;
 		return true;
 	}
-	
+	/**
+	 * 
+	 */
 	@Override
 	public String toString()
 	{

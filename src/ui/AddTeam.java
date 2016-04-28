@@ -1,4 +1,4 @@
-/*
+/**
  * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
  */
 
@@ -15,7 +15,12 @@ public class AddTeam
 	private Team team;
 	private Sport sport;
 	private Participant participant;
-	
+	/**
+	 * 
+	 * @param sports
+	 * @param competitors
+	 * @return
+	 */
 	public boolean addTeamOrMembers(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
 		while(true)
@@ -32,9 +37,13 @@ public class AddTeam
 			default: System.out.println("Wrong option. Choose an option between 1 and 3.");
 			}
 		}
-		
-
 	}
+	/**
+	 * 
+	 * @param sports
+	 * @param competitors
+	 * @return
+	 */
 	public boolean addTeam(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
 		//printing out all sports and if they are a team sport
@@ -101,7 +110,12 @@ public class AddTeam
 		
 		return true;
 	}
-	
+	/**
+	 * 
+	 * @param sports
+	 * @param competitors
+	 * @return
+	 */
 	public boolean addTeamMember(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
 		//lists all the sports and lets the user select which sport to add a team member to.
@@ -125,13 +139,22 @@ public class AddTeam
 		return true;
 		
 	}
-	
+	/**
+	 * 
+	 * @param team
+	 * @param competitors
+	 * @return
+	 */
 	public boolean addTeamMember(Team team, Vector<Competitor> competitors)
 	{	
 		addMember(team, competitors);
 		return true;
 	}
-	
+	/**
+	 * 
+	 * @param team
+	 * @param competitors
+	 */
 	public void addMember(Team team, Vector<Competitor> competitors)
 	{	
 			//Checks if there are any competitors in the competitor vector

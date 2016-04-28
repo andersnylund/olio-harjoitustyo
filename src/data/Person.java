@@ -1,9 +1,13 @@
-/*
+/**
  * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
  */
 
 package data;
-
+/**
+ * Used to create new persons
+ * @author Anders Nylund w101302, Jeremias Snellman w101318
+ *
+ */
 public class Person 
 {
 	public static final int NAME_MAX_LENGTH = 64;
@@ -17,7 +21,7 @@ public class Person
 	public static final String WOMAN = "Woman";
 	public static final String OTHER = "Other";
 	
-	/*
+	/**
 	 * This method is used to check user's name input if it is valid for both first-name and last-name.
 	 * Name must be between 1-64 characters long and include only letters or "-" symbol
 	 * @param name The name to check it
@@ -44,7 +48,7 @@ public class Person
 		return true;
 	}
 	
-	/*
+	/**
 	 * Sets first name for person
 	 * @param fistName 
 	 */
@@ -52,21 +56,21 @@ public class Person
 		this.firstName = firstName;
 	}
 	
-	/*
+	/**
 	 * Sets last name for person
 	 * @param lastName 
 	 */
 	public void setLastname(String lastName){
 		this.lastName = lastName;
 	}
-	/*
+	/**
 	 * Sets age for person
 	 * @param age 
 	 */
 	public void setAge(int age){
 		this.age = age;
 	}
-	/*
+	/**
 	 * Sets gender for person
 	 * @param gender
 	 */
@@ -78,7 +82,7 @@ public class Person
 		}
 	}
 	
-	/*
+	/**
 	 * Returns the first name of person
 	 * @return String Returns first-name
 	 */
@@ -86,7 +90,7 @@ public class Person
 		return firstName;
 	}
 	
-	/*
+	/**
 	 * Returns the name of person
 	 * @return String Returns first name of person
 	 */
@@ -94,14 +98,14 @@ public class Person
 		return lastName;
 	}
 	
-	/*
+	/**
 	 * Returns the age of person
 	 * @return int Returns the age of person
 	 */
 	public int getAge(){
 		return age;
 	}
-	/*
+	/**
 	 * Returns the gender of person
 	 * @return char Returns the gender of person
 	 */
@@ -109,8 +113,8 @@ public class Person
 		return gender;
 	}
 	
-	/*
-	 * Returns all information of person as a String, is used to 
+	/**
+	 * Convert persons information to a String 
 	 * @return String Returns all information of person as a String
 	 */
 	@Override

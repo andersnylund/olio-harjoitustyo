@@ -1,5 +1,6 @@
-/*
+/**
  * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
+ * 	@brief This class is used as an interface for the user, with outputs and inputs with the command prompt
  */
 package ui;
 
@@ -9,14 +10,13 @@ import data.*;
 import uva.*;
 
 
-/*
+/**
  * The view class which asks for the names and prints the result
  */
-	
 public class View
 {
 
-	/*
+	/**
 	 * Used to print prompt for setting last name
 	 * @return String Returns user input
 	 */
@@ -26,7 +26,7 @@ public class View
 		String last=Lue.rivi();
 		return last;
 	}
-	/*
+	/**
 	 * Used to print prompt for setting first name
 	 * @return String Returns user input
 	 */
@@ -37,7 +37,7 @@ public class View
 		return first;
 	}
 	
-	/*
+	/**
 	 * Used to print prompt for setting first name
 	 * @return String Returns user input
 	 */
@@ -47,14 +47,20 @@ public class View
 		double score = Lue.dluku();
 		return score;
 	}
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public int askAge()
 	{
 		System.out.print("Age\n>");
 		int age = Lue.kluku();
 		return age;
 	}
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public int askGender()
 	{
 		System.out.print("Gender (Man = 1, Woman = 2, Other = 3)\n>");
@@ -62,8 +68,10 @@ public class View
 		return gender;
 	}
 	
-	//Ask user to either start new competition or load an existing competition
-	//Return users input (1 or 2)
+	/**
+	 * Ask user to either start new competition or load an existing competition.
+	 * @return Returns users input (1 or 2)
+	 */
 	public int printStart()
 	{
 		while(true)
@@ -76,13 +84,20 @@ public class View
 		}
 	}
 	
-	//sets name for the created competition and return it
+	/**
+	 * Sets name for the created competition and return it
+	 * @return
+	 */
 	public String setCompetitionName()
 	{
 		System.out.print("Enter name of competition\n>");
 		return Lue.rivi();
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public int printMainMenu()
 	{
 		System.out.println("\n1. Sports");
@@ -94,14 +109,20 @@ public class View
 		System.out.print("> ");
 		return Lue.kluku();
 	}
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public String setSportName()
 	{
 		System.out.print("Name of the sport\n>");
 		String name = Lue.rivi();
 		return name;
 	}
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public String setTeamName()
 	{
 		System.out.print("Name of the team\n>");
@@ -111,7 +132,12 @@ public class View
 	
 
 
-	
+	/**
+	 * 
+	 * @param competitors
+	 * @param message
+	 * @return
+	 */
 	public Competitor selectCompetitor(Vector<Competitor> competitors, String message)
 	{	
 		//lists the competitors and returns null if no competitors was found
@@ -140,7 +166,11 @@ public class View
 		}
 		
 	}
-	
+	/**
+	 * 
+	 * @param teams
+	 * @return
+	 */
 	public Team selectTeam(Vector<Team> teams)
 	{	
 		//lists all teams and returns null if no teams were found.
@@ -169,7 +199,11 @@ public class View
 			System.out.println("Team not found. Choose an existing team.");
 		}
 	}
-	
+	/**
+	 * 
+	 * @param sports
+	 * @return
+	 */
 	public Sport selectSport(Vector<Sport> sports)
 	{	
 		//lists all sports and returns null if no sports were found.
@@ -197,7 +231,11 @@ public class View
 			System.out.println("Sport not found. Choose an existing sport.");
 		}
 	}
-	
+	/**
+	 * 
+	 * @param sport
+	 * @return
+	 */
 	public Participant selectParticipant(Sport sport)
 	{
 		if(!listSportandParticipants(sport))
@@ -225,7 +263,11 @@ public class View
 			System.out.println("Participant not found. Choose participant from list.");
 		}
 	}
-	
+	/**
+	 * 
+	 * @param sport
+	 * @return
+	 */
 	public boolean listSportandParticipants(Sport sport)
 	{
 		if(sport.getParticipantsVector().isEmpty())
@@ -244,7 +286,11 @@ public class View
 		
 		return true;
 	}
-	
+	/**
+	 * 
+	 * @param competitors
+	 * @return
+	 */
 	public boolean listCompetitors(Vector<Competitor> competitors)
 	{	
 		if(competitors.isEmpty()){
@@ -259,7 +305,11 @@ public class View
 		System.out.println();
 		return true;
 	}
-	
+	/**
+	 * 
+	 * @param teams
+	 * @return
+	 */
 	public boolean listTeams(Vector<Team> teams)
 	{
 		if(teams.isEmpty()){
@@ -274,7 +324,11 @@ public class View
 		System.out.println();
 		return true;
 	}
-	
+	/**
+	 * 
+	 * @param sport
+	 * @return
+	 */
 	public boolean listTeams(Sport sport)
 	{
 		if(sport == null)
@@ -290,7 +344,10 @@ public class View
 		return true;
 	}
 	
-	//prints a team
+	/**
+	 * Prints a team
+	 * @param team
+	 */
 	public void listTeamAndMembers(Team team)
 	{
 		System.out.println("\tTeam: " + team.getName());
@@ -302,7 +359,11 @@ public class View
 		}
 		System.out.println();
 	}	
-	
+	/**
+	 * 
+	 * @param sports
+	 * @return
+	 */
 	public boolean listSports(Vector<Sport> sports)
 	{	
 		if(sports.isEmpty()){
@@ -324,3 +385,7 @@ public class View
 	}
 	
 }
+
+
+
+

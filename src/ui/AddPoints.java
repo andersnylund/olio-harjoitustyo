@@ -1,4 +1,4 @@
-/*
+/**
  * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
  */
 
@@ -13,7 +13,11 @@ import data.*;
 public class AddPoints 
 {
 	View view = new View();
-	
+	/**
+	 * 
+	 * @param sports
+	 * @return
+	 */
 	public boolean addEditPoints(Vector<Sport>sports)
 	{
 		while(true)
@@ -39,7 +43,11 @@ public class AddPoints
 			}
 		}
 	}
-	
+	/**
+	 * 
+	 * @param sports
+	 * @return
+	 */
 	public boolean addIndividualsPoints(Vector<Sport>sports)
 	{
 		if(sports.isEmpty())
@@ -50,7 +58,11 @@ public class AddPoints
 		view.selectParticipant(view.selectSport(sports)).setScore(view.askScore());
 		return true;
 	}
-	
+	/**
+	 * 
+	 * @param sports
+	 * @return
+	 */
 	public boolean addTeamsPoints(Vector<Sport>sports)
 	{
 		if(sports.isEmpty())

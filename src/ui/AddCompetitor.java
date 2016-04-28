@@ -1,4 +1,4 @@
-/*
+/**
  * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
  */
 
@@ -13,9 +13,13 @@ public class AddCompetitor
 {
 	private View view = new View();
 	private Competitor competitor;
-	
-	//method to add competitors (persons) to the competition. These competitors are used both as competitors and officials
-	//in different sports 
+	 
+	/**
+	 * Method to add competitors (persons) to the competition. 
+	 * These competitors are used both as competitors and officials in different sports
+	 * @param competitors
+	 * @return
+	 */
 	public Vector<Competitor> addEditCompetitor(Vector <Competitor> competitors)
 	{
 		//lists all the competitors saved in the program
@@ -53,7 +57,10 @@ public class AddCompetitor
 		//returns the vector of competitors to the Main-class
 		return competitors;
 	}
-	
+	/**
+	 * 
+	 * @param competitors
+	 */
 	public void addCompetitor(Vector<Competitor> competitors)
 	{
 		Competitor competitor = new Competitor();
@@ -66,7 +73,10 @@ public class AddCompetitor
 		competitor.setGender(view.askGender());
 		competitors.add(competitor);
 	}
-	
+	/**
+	 * 
+	 * @param competitors
+	 */
 	public void editCompetitor(Vector<Competitor> competitors)
 	{
 		competitor = view.selectCompetitor(competitors, "to edit");

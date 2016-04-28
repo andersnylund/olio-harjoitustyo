@@ -1,4 +1,4 @@
-/*
+/**
  * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
  */
 
@@ -19,7 +19,11 @@ public class AddSport
 	
 	private boolean teamSport;
 	
-	
+	/**
+	 * 
+	 * @param sports
+	 * @param competitors
+	 */
 	public void addSportAndParticipants(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
 		view.listSports(sports);
@@ -53,7 +57,10 @@ public class AddSport
 				System.out.println("Wrong character input!");
 		}
 	}
-	
+	/**
+	 * 
+	 * @param sports
+	 */
 	public void addSport(Vector<Sport> sports)
 	{
 		char set;
@@ -82,7 +89,11 @@ public class AddSport
 		
 		sports.addElement(new Sport(teamSport, false, name)); 
 	}
-	
+	/**
+	 * 
+	 * @param sports
+	 * @param competitors
+	 */
 	public void addParticipantsToSport(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
 		if(sports.isEmpty())
@@ -108,6 +119,9 @@ public class AddSport
 			break;
 		}
 	}
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public Sport getSport(){ return sport;}
 }
