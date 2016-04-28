@@ -74,30 +74,9 @@ public class AddSport
 				System.out.println("Wrong character input");
 		}
 		
-		//Ask the user to say if the new sport is a league sport
-		System.out.println("Does the sport contain leagues? (Y/N)");
-	
-		//waits for the user to insert either Y or N 
-		while(true)
-		{
-			set = Lue.merkki();
-			if(set == 'Y')
-			{
-				leagueSport = true;
-				break;
-			}
-			else if(set == 'N')
-			{
-				leagueSport = false;
-				break;
-			}
-			else
-				System.out.println("Wrong character input!");
-		}
-		
 		String name = view.setSportName();
 		
-		sports.addElement(new Sport(teamSport, leagueSport, name)); 
+		sports.addElement(new Sport(teamSport, false, name)); 
 	}
 	
 	public void addParticipantsToSport(Vector<Sport> sports, Vector<Competitor> competitors)

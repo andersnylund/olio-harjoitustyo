@@ -253,7 +253,7 @@ public class View
 		System.out.println("List of all teams: ");
 		for(int i = 0; i < teams.size(); i++)
 		{
-			System.out.println(teams.elementAt(i));
+			System.out.println((i + 1) + ": " + teams.elementAt(i).getName());
 		}
 		return true;
 	}
@@ -276,7 +276,7 @@ public class View
 	public void listTeamAndMembers(Team team)
 	{
 		System.out.println("\tTeam: " + team.getName());
-		System.out.println("\tScore: " + String.format("%.1f)", team.getScoreTeam()));
+		System.out.println("\tScore: " + String.format("%.1f", team.getScoreTeam()));
 		System.out.println("\t\tTeam members:");
 		
 		for(int i = 0; i < team.nroOfMembers(); i++){
@@ -296,17 +296,10 @@ public class View
 			System.out.print((i+1) + ". " + sports.elementAt(i) + ", Teamsport: ");
 			if(sports.elementAt(i).ifTeamSport())
 			{
-				System.out.print("Yes ,");
+				System.out.println("Yes");
 			}
 			else
-				System.out.print("No ,");
-			System.out.print("Leaguesport: ");
-			if(sports.elementAt(i).ifLeagueSport())
-			{
-				System.out.println("Yes ");
-			}
-			else
-				System.out.println("No ");
+				System.out.println("No");
 		}
 		return true;
 	}

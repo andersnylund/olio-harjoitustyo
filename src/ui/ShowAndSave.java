@@ -17,7 +17,8 @@ public class ShowAndSave {
 		for(int i = 0; i < sports.size(); i++)
 		{
 			if(sports.elementAt(i).ifTeamSport())
-			{
+			{	
+				System.out.println("Sport: " + sports.elementAt(i));
 				for(int j = 0; j < sports.elementAt(i).nroOfTeams(); j++)
 				{
 					view.listTeamAndMembers(sports.elementAt(i).getTeam(j));
