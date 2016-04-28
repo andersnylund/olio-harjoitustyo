@@ -85,11 +85,11 @@ public class View
 	
 	public int printMainMenu()
 	{
-		System.out.println("\n1. Add sport and add participants to sport");
-		System.out.println("2. Add teams");
-		System.out.println("3. Add/edit competitors or officials");
-		System.out.println("4. Add/edit points");
-		System.out.println("5. Show results/save current results in competition");
+		System.out.println("\n1. Sports");
+		System.out.println("2. Teams");
+		System.out.println("3. Competitors/Officials");
+		System.out.println("4. Points");
+		System.out.println("5. Results/save");
 		System.out.println("6. Quit program");
 		System.out.print("> ");
 		return Lue.kluku();
@@ -240,6 +240,7 @@ public class View
 		{
 			System.out.println("\t"+sport.getParticipantsVector().elementAt(i).toString());
 		}
+		System.out.println();
 		
 		return true;
 	}
@@ -255,6 +256,7 @@ public class View
 		{
 			System.out.println(competitors.elementAt(i));
 		}
+		System.out.println();
 		return true;
 	}
 	
@@ -267,8 +269,9 @@ public class View
 		System.out.println("List of all teams: ");
 		for(int i = 0; i < teams.size(); i++)
 		{
-			System.out.println(teams.elementAt(i));
+			System.out.println((i + 1) + ": " + teams.elementAt(i).getName());
 		}
+		System.out.println();
 		return true;
 	}
 	
@@ -283,6 +286,7 @@ public class View
 		{
 			System.out.println("\t" + sport.getTeam(i).getName());
 		}
+		System.out.println();
 		return true;
 	}
 	
@@ -290,12 +294,13 @@ public class View
 	public void listTeamAndMembers(Team team)
 	{
 		System.out.println("\tTeam: " + team.getName());
-		System.out.println("\tScore: " + String.format("%.1f)", team.getScoreTeam()));
+		System.out.println("\tScore: " + String.format("%.1f", team.getScoreTeam()));
 		System.out.println("\t\tTeam members:");
 		
 		for(int i = 0; i < team.nroOfMembers(); i++){
 			System.out.println("\t\t" + team.getMember(i).toString());
 		}
+		System.out.println();
 	}	
 	
 	public boolean listSports(Vector<Sport> sports)
@@ -310,17 +315,10 @@ public class View
 			System.out.print((i+1) + ". " + sports.elementAt(i) + ", Teamsport: ");
 			if(sports.elementAt(i).ifTeamSport())
 			{
-				System.out.print("Yes ,");
+				System.out.println("Yes");
 			}
 			else
-				System.out.print("No ,");
-			System.out.print("Leaguesport: ");
-			if(sports.elementAt(i).ifLeagueSport())
-			{
-				System.out.println("Yes ");
-			}
-			else
-				System.out.println("No ");
+				System.out.println("No");
 		}
 		return true;
 	}

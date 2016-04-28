@@ -17,7 +17,7 @@ public class AddSport
 	private Sport sport;
 	private Competitor competitor;
 	
-	private boolean teamSport, leagueSport;
+	private boolean teamSport;
 	
 	
 	public void addSportAndParticipants(Vector<Sport> sports, Vector<Competitor> competitors)
@@ -30,23 +30,23 @@ public class AddSport
 		System.out.print(">");
 		
 		
-		char a;
+		int a;
 		//waits for the user to input either S or P
 		while(true)
 		{
-			a = Lue.merkki();
-			if(a == '1')
+			a = Lue.kluku();
+			if(a == 1)
 			{
 				addSport(sports);
 				break;
 			}
 			//lets user add participant to sport
-			else if(a == '2')
+			else if(a == 2)
 			{
 				addParticipantsToSport(sports, competitors);
 				break;
 			}
-			else if(a == '3'){
+			else if(a == 3){
 				break;
 			}
 			else
@@ -78,30 +78,9 @@ public class AddSport
 				System.out.println("Wrong character input");
 		}
 		
-		//Ask the user to say if the new sport is a league sport
-		System.out.println("Does the sport contain leagues? (Y/N)");
-	
-		//waits for the user to insert either Y or N 
-		while(true)
-		{
-			set = Lue.merkki();
-			if(set == 'Y')
-			{
-				leagueSport = true;
-				break;
-			}
-			else if(set == 'N')
-			{
-				leagueSport = false;
-				break;
-			}
-			else
-				System.out.println("Wrong character input!");
-		}
-		
 		String name = view.setSportName();
 		
-		sports.addElement(new Sport(teamSport, leagueSport, name)); 
+		sports.addElement(new Sport(teamSport, false, name)); 
 	}
 	
 	public void addParticipantsToSport(Vector<Sport> sports, Vector<Competitor> competitors)

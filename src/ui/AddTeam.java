@@ -21,7 +21,7 @@ public class AddTeam
 		while(true)
 		{
 			//Asks the user if he wants to add a team or members to a team
-			System.out.println("What do you want to do? \n1. Add a team?\n2. Add members to a team?\n3. Back to main menu?");
+			System.out.println("\n1. Add a team\n2. Add members to a team\n3. Back to main menu");
 			int index = Lue.kluku();
 			
 			switch(index)
@@ -84,7 +84,7 @@ public class AddTeam
 				System.out.println("Add member (Y/N)");
 				set = Lue.merkki();
 				if(set == 'Y'){
-					if(!addTeamMember(sports,competitors))
+					if(!addTeamMember(team,competitors))
 						break;
 				}
 				else if(set == 'N'){
@@ -120,47 +120,36 @@ public class AddTeam
 			return false;
 		}
 		
-		addMember(competitors);
+		addMember(team, competitors);
 		
 		return true;
 		
 	}
 	
-	public void addMember(Vector<Competitor> competitors)
+	public boolean addTeamMember(Team team, Vector<Competitor> competitors)
 	{	
-		char set;
-		
-		while(true)
-		{
-			System.out.println("Add member (Y/N)");
-			set = Lue.merkki();
-			if(set == 'Y'){
-				
-				//Checks if there are any competitors in the competitor vector
-				if(!competitors.isEmpty())
-				{	
-					//lists all the competitors
-					//creates  new participant object and lets the user choose
-					//which competitor to add to the participant object
-					participant = new Participant(view.selectCompetitor(competitors, ""));
-					if(participant == null)
-						return;
-					//adds the participant to the team member vector.
-					team.addMember(participant);
-					System.out.println("Member added.");
-				}
-				else{
-					System.out.print("No competitors found.");
-					break;
-				}
-				
-			}
-			else if(set == 'N'){
-				System.out.println("Team complete.\n");
-				break;
+		addMember(team, competitors);
+		return true;
+	}
+	
+	public void addMember(Team team, Vector<Competitor> competitors)
+	{	
+			//Checks if there are any competitors in the competitor vector
+			if(!competitors.isEmpty())
+			{	
+				//lists all the competitors
+				//creates  new participant object and lets the user choose
+				//which competitor to add to the participant object
+				participant = new Participant(view.selectCompetitor(competitors, ""));
+				if(participant == null)
+					return;
+				//adds the participant to the team member vector.
+				team.addMember(participant);
+				System.out.println("Member added.");
 			}
 			else
-				System.out.println("Wrong character input!");
-		}
+			{
+				System.out.println("No competitors found.");
+			}	
 	}
 }

@@ -102,10 +102,13 @@ public class Person
 		return age;
 	}
 	
+<<<<<<< HEAD
 	/*
 	 * Returns the gender of person
 	 * @return char Returns the gender of person
 	 */
+=======
+>>>>>>> origin/master
 	public String getGender(){
 		return gender;
 	}
@@ -116,6 +119,10 @@ public class Person
 	 */
 	@Override
 	public String toString(){
+<<<<<<< HEAD
 		return "Name: " + firstName + " " + lastName +"\tAge: "+age+"\tGender: "+gender;
+=======
+		return "Name: " + firstName + " " + lastName +"\tAge: "+Integer.toString(age)+"\tGender: "+gender;
+>>>>>>> origin/master
 	}
 }
