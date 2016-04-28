@@ -10,11 +10,11 @@ public class Person
 	
 	private String lastName, firstName;
 	private int age;
-	private char gender;
+	private String gender;
 	
-	public static final char MAN = 'M';
-	public static final char WOMAN = 'W';
-	public static final char OTHER = 'O';
+	public static final String MAN = "Man";
+	public static final String WOMAN = "Woman";
+	public static final String OTHER = "Other";
 	
 	public boolean checkName(String name)
 	{
@@ -73,13 +73,13 @@ public class Person
 		return age;
 	}
 	
-	public char getGender(){
+	public String getGender(){
 		return gender;
 	}
 	
 	//returns the first and last name as a string
 	@Override
 	public String toString(){
-		return firstName + " " + lastName +", "+age+", "+gender ;
+		return "Name: " + firstName + " " + lastName +"\tAge: "+age+"\tGender: "+gender;
 	}
 }

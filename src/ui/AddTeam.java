@@ -80,7 +80,7 @@ public class AddTeam
 				System.out.println("Add member (Y/N)");
 				set = Lue.merkki();
 				if(set == 'Y'){
-					if(!addTeamMember(sports,competitors))
+					if(!addTeamMember(team,competitors))
 						break;
 				}
 				else if(set == 'N'){
@@ -116,13 +116,19 @@ public class AddTeam
 			return false;
 		}
 		
-		addMember(competitors);
+		addMember(team, competitors);
 		
 		return true;
 		
 	}
 	
-	public void addMember(Vector<Competitor> competitors)
+	public boolean addTeamMember(Team team, Vector<Competitor> competitors)
+	{	
+		addMember(team, competitors);
+		return true;
+	}
+	
+	public void addMember(Team team, Vector<Competitor> competitors)
 	{	
 			//Checks if there are any competitors in the competitor vector
 			if(!competitors.isEmpty())
@@ -139,7 +145,7 @@ public class AddTeam
 			}
 			else
 			{
-				System.out.print("No competitors found.");
+				System.out.println("No competitors found.");
 			}	
 	}
 }

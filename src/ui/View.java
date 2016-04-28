@@ -226,6 +226,7 @@ public class View
 		{
 			System.out.println("\t"+sport.getParticipantsVector().elementAt(i).toString());
 		}
+		System.out.println();
 		
 		return true;
 	}
@@ -241,6 +242,7 @@ public class View
 		{
 			System.out.println(competitors.elementAt(i));
 		}
+		System.out.println();
 		return true;
 	}
 	
@@ -255,6 +257,7 @@ public class View
 		{
 			System.out.println((i + 1) + ": " + teams.elementAt(i).getName());
 		}
+		System.out.println();
 		return true;
 	}
 	
@@ -269,6 +272,7 @@ public class View
 		{
 			System.out.println("\t" + sport.getTeam(i).getName());
 		}
+		System.out.println();
 		return true;
 	}
 	
@@ -282,6 +286,7 @@ public class View
 		for(int i = 0; i < team.nroOfMembers(); i++){
 			System.out.println("\t\t" + team.getMember(i).toString());
 		}
+		System.out.println();
 	}	
 	
 	public boolean listSports(Vector<Sport> sports)

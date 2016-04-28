@@ -15,20 +15,20 @@ public class ShowAndSave {
 	
 	public void printAllInfo(Vector<Sport> sports){
 		for(int i = 0; i < sports.size(); i++)
-		{
-			if(sports.elementAt(i).ifTeamSport())
+		{	
+			sport = sports.elementAt(i);
+			
+			if(sport.ifTeamSport())
 			{	
-				System.out.println("Sport: " + sports.elementAt(i));
-				for(int j = 0; j < sports.elementAt(i).nroOfTeams(); j++)
+				System.out.println("Sport: " + sport);
+				for(int j = 0; j < sport.nroOfTeams(); j++)
 				{
-					view.listTeamAndMembers(sports.elementAt(i).getTeam(j));
+					view.listTeamAndMembers(sport.getTeam(j));
 				}
 			}
 			else
-				for(int j = 0; j <sports.elementAt(i).nroOfParticipants(); j++)
-				{
-					view.listSportandParticipants(sports.elementAt(j));
-				}
+				view.listSportandParticipants(sport);
+			
 		}
 	}
 

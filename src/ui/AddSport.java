@@ -26,23 +26,23 @@ public class AddSport
 		System.out.print(">");
 		
 		
-		char a;
+		int a;
 		//waits for the user to input either S or P
 		while(true)
 		{
-			a = Lue.merkki();
-			if(a == '1')
+			a = Lue.kluku();
+			if(a == 1)
 			{
 				addSport(sports);
 				break;
 			}
 			//lets user add participant to sport
-			else if(a == '2')
+			else if(a == 2)
 			{
 				addParticipantsToSport(sports, competitors);
 				break;
 			}
-			else if(a == '3'){
+			else if(a == 3){
 				break;
 			}
 			else
