@@ -60,9 +60,9 @@ public class League
 		//check how it works
 		if(participant == null) return false;
 		
-		int g = participant.getGender();
+		//int g = participant.getGender();
 		
-		if(g != Competitor.WOMAN && womenLeague) return false;
+		//if(g != Competitor.WOMAN && womenLeague) return false;
 		
 		if(ageLimit != 0){
 			if(ageLimit < JUNIORI_LIMIT){
