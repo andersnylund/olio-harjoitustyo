@@ -26,7 +26,7 @@ public class Participant {
 	
 	public String getLastname () { return competitor.getLastname (); }
 	public String getFirstname () { return competitor.getFirstname (); }
-	public int getGender () { return competitor.getGender (); }
+	public String getGender () { return competitor.getGender (); }
 	public int getAge () { return competitor.getAge(); }
 	public int getNumber () { return competitor.getNumber(); }
 	
@@ -37,7 +37,7 @@ public class Participant {
 	@Override
 	public String toString(){
 		if(score != 0)
-			return competitor.toString() + "\t\t\t" + Double.toString(score);
+			return competitor.toString() + "\t\tScore: " + Double.toString(score);
 		return competitor.toString();
 	}
 	

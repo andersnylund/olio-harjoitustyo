@@ -11,11 +11,11 @@ public class Person
 	
 	private String lastName, firstName;
 	private int age;
-	private char gender;
+	private String gender;
 	
-	public static final char MAN = 'M';
-	public static final char WOMAN = 'W';
-	public static final char OTHER = 'O';
+	public static final String MAN = "Man";
+	public static final String WOMAN = "Woman";
+	public static final String OTHER = "Other";
 	
 	/*
 	 * This method is used to check user's name input if it is valid for both first-name and last-name.
@@ -106,7 +106,7 @@ public class Person
 	 * Returns the gender of person
 	 * @return char Returns the gender of person
 	 */
-	public char getGender(){
+	public String getGender(){
 		return gender;
 	}
 	
@@ -116,6 +116,6 @@ public class Person
 	 */
 	@Override
 	public String toString(){
-		return firstName + " " + lastName +", "+age+", "+gender ;
+		return "Name: " + firstName + " " + lastName +"\tAge: "+age+"\tGender: "+gender;
 	}
 }
