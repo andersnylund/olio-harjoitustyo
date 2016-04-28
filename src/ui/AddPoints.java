@@ -54,7 +54,7 @@ public class AddPoints
 			System.out.println("No team found. Add a team and try again");
 			return false;
 		}
-		view.selectTeam(view.selectSport(sports).getTeamVector()).setScoreTeam();
+		view.selectTeam(view.selectSport(sports).getTeamVector()).setScoreTeam(view.askScore());
 		return true;
 	}
 	

@@ -16,20 +16,25 @@ public class Person
 	public static final char WOMAN = 'W';
 	public static final char OTHER = 'O';
 	
-	private static boolean checkName(String name){
+	public boolean checkName(String name)
+	{
 		
 		if(name.length() < NAME_MIN_LENGTH || name.length() > NAME_MAX_LENGTH)
+		{
+			System.out.println("Name can't contain symbols and must be 1-64 characters long!");
 			return false;
+		}
 		
 		for (int i = 0; i < name.length (); ++i)
 		{
 			int character = name.codePointAt (i);
 			if (!Character.isLetter (character) && character != '-')
+			{
+				System.out.println("Name can't contain symbols and must be 1-64 characters long!");
 				return false;
+			}
 		}
-
 		return true;
-		
 	}
 	
 	public void setFirstname(String firstName){

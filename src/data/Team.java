@@ -43,12 +43,10 @@ public class Team {
 		
 		return -1;
 	}
-	public void setScoreTeam(){
-		//adds all team members' score 
-		for(int i = 0; i < teamMembers.size(); i++)
-		{
-			scoreTeam += getMember(i).getScore();
-		}
+	
+	public void setScoreTeam(double score)
+	{
+		scoreTeam = score;
 	}
 	
 	public double getScoreTeam(){ return scoreTeam; }

@@ -53,8 +53,11 @@ public class AddCompetitor
 	public void addCompetitor(Vector<Competitor> competitors)
 	{
 		Competitor competitor = new Competitor();
-		competitor.setLastname(view.askLastname());
-		competitor.setFirstname(view.askFirstname());
+		do
+		{
+			competitor.setLastname(view.askLastname());
+			competitor.setFirstname(view.askFirstname());
+		}while(!(competitor.checkName(competitor.getLastname())) && !(competitor.checkName(competitor.getFirstname())));
 		competitor.setAge(view.askAge());
 		competitor.setGender(view.askGender());
 		competitors.add(competitor);
