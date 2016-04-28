@@ -1,22 +1,35 @@
+/*
+ * @author	Anders Nylund w101302, Jeremias Snellman w101318
+ * TODO	Comments to everything
+ * 		Fix user interface
+ * 		Add option to delete, competitors, teams and sports
+ * 		Check exceptions
+ */
+
 package ui;
-
 import java.util.Vector;
-
 import data.*;
 
 public class Main 
 {
-	//COMPETITION_NAME is set as the name of the file if the user wants to save the recently made competition
-	//or it is used as the filename to load to the program
+	/*
+	 * COMPETITION_NAME is set as the name of the file if the user wants to save the recently made competition or it is used as the filename to load to the program
+	 */
 	static private String COMPETITION_NAME;
-	//an object of the data menu that is used by the Main-class
+	
+	/*
+	 * Object of the data menu that is used by the Main-class
+	 */
 	static View mainView = new View();
 	
-	//vector where all the persons of the competition are stored
-	//these persons are used later as competitors or officials
+	/*
+	 * Vector where all the persons of the competition are stored these persons are used later as competitors or officials
+	 */
 	private static Vector<Competitor> competitors = new Vector<Competitor>();
 	
-	//Creates a vector of sport objects.
+	/*
+	 * Creates a vector of sport objects.
+	 */
 	private static Vector<Sport> sports = new Vector<Sport>();
 	
 	private static AddTeam addTeam = new AddTeam();
@@ -45,35 +58,49 @@ public class Main
 			mainMenu();
 	}	
 	
-	//the data method that is run every time user has done a task
-	//different cases calls different methods to create or modify data
+	/*
+	 * The data method that is run every time user has done a task
+	 * Different cases calls different methods to create or modify data
+	 */
 	public static void mainMenu()
 	{	
 		
 		switch(mainView.printMainMenu())
 		{
-			//Add sport
+			/*
+			 * Add sport
+			 */
 			case 1:	
 				addSport.addSportAndParticipants(sports, competitors);
 				break;	
-			//Add team	
+			/*
+			 * Add team	
+			 */
 			case 2:
 				addTeam.addTeamOrMembers(sports, competitors);
 				break;
-			//Add/edit competitor/official
+			/*
+			 * Add or edit competitor or official
+			 */
 			case 3:
 				addCompetitor.addEditCompetitor(competitors);
 				break;
-			//Add/edit points
+			/*
+			 * Add or edit points
+			 */
 			case 4:
 				addPoints.addEditPoints(sports);
 				break;
-			//Show results/ save current results in the competition
+			/*
+			 * Show results or save current results in the competition
+			 */
 			case 5:
 				showAndSave.printAllInfo(sports);
 			
 				break;
-			//quit program
+			/*
+			 * Quit program
+			 */
 			case 6:
 				System.out.println("Shutting down program!");
 				System.exit(0);
@@ -82,6 +109,10 @@ public class Main
 		}
 	}
 	
+	/*
+	 * Returns the name of the competition
+	 * @return String Returns the name of the competition
+	 */
 	public String getCompetitionName()
 	{
 		return COMPETITION_NAME;

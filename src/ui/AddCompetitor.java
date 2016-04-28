@@ -1,3 +1,7 @@
+/*
+ * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
+ */
+
 package ui;
 
 import java.util.Vector;
@@ -68,8 +72,11 @@ public class AddCompetitor
 		competitor = view.selectCompetitor(competitors, "to edit");
 		if(competitor == null)
 			return;
-		competitor.setLastname(view.askLastname());
-		competitor.setFirstname(view.askFirstname());
+		do
+		{
+			competitor.setLastname(view.askLastname());
+			competitor.setFirstname(view.askFirstname());
+		}while(!(competitor.checkName(competitor.getLastname())) && !(competitor.checkName(competitor.getFirstname())));
 		competitor.setAge(view.askAge());
 		competitor.setGender(view.askGender());
 	}

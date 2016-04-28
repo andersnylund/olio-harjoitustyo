@@ -1,10 +1,15 @@
+/*
+ * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
+ */
+
 package ui;
 
 import java.util.Vector;
 
 import data.*;
 
-public class ShowAndSave {
+public class ShowAndSave 
+{
 	
 	private Sport sport;
 	private Team team;
@@ -13,6 +18,10 @@ public class ShowAndSave {
 	
 	private View view = new View();
 	
+	
+	/*
+	 * Prints all the info that is saved in the program at the current state
+	 */
 	public void printAllInfo(Vector<Sport> sports){
 		for(int i = 0; i < sports.size(); i++)
 		{

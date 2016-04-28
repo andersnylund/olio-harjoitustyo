@@ -1,6 +1,6 @@
-//Anders Nylund w101302
-//Jeremias Snellman w101318
-
+/*
+ * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
+ */
 package ui;
 
 import java.util.Vector;
@@ -9,17 +9,27 @@ import data.*;
 import uva.*;
 
 
-//The view class which asks for the names and prints the result
+/*
+ * The view class which asks for the names and prints the result
+ */
 	
 public class View
 {
 
+	/*
+	 * Used to print prompt for setting last name
+	 * @return String Returns user input
+	 */
 	public String askLastname()
 	{
 		System.out.print("Lastname\n>");
 		String last=Lue.rivi();
 		return last;
 	}
+	/*
+	 * Used to print prompt for setting first name
+	 * @return String Returns user input
+	 */
 	public String askFirstname()
 	{
 		System.out.print("Firstname\n>");
@@ -27,6 +37,10 @@ public class View
 		return first;
 	}
 	
+	/*
+	 * Used to print prompt for setting first name
+	 * @return String Returns user input
+	 */
 	public double askScore()
 	{
 		System.out.print("Score\n>");

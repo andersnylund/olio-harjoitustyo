@@ -1,5 +1,6 @@
-//Anders Nylund w101302
-//Jeremias Snellman w101318
+/*
+ * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
+ */
 
 package data;
 
@@ -16,6 +17,12 @@ public class Person
 	public static final char WOMAN = 'W';
 	public static final char OTHER = 'O';
 	
+	/*
+	 * This method is used to check user's name input if it is valid for both first-name and last-name.
+	 * Name must be between 1-64 characters long and include only letters or "-" symbol
+	 * @param name The name to check it
+	 * @return boolean True if name was OK, false if 
+	 */
 	public boolean checkName(String name)
 	{
 		
@@ -37,19 +44,32 @@ public class Person
 		return true;
 	}
 	
+	/*
+	 * Sets first name for person
+	 * @param fistName 
+	 */
 	public void setFirstname(String firstName){
 		this.firstName = firstName;
 	}
 	
-	
+	/*
+	 * Sets last name for person
+	 * @param lastName 
+	 */
 	public void setLastname(String lastName){
 		this.lastName = lastName;
 	}
-	
+	/*
+	 * Sets age for person
+	 * @param age 
+	 */
 	public void setAge(int age){
 		this.age = age;
 	}
-	
+	/*
+	 * Sets gender for person
+	 * @param gender
+	 */
 	public void setGender(int gender){
 		switch (gender){
 		case 1: this.gender = MAN; break;
@@ -58,26 +78,42 @@ public class Person
 		}
 	}
 	
-	//returns the first name
+	/*
+	 * Returns the first name of person
+	 * @return String Returns first-name
+	 */
 	public String getFirstname(){
 		return firstName;
 	}
 	
-	//returns the last name
+	/*
+	 * Returns the name of person
+	 * @return String Returns first name of person
+	 */
 	public String getLastname(){
 		return lastName;
 	}
 	
-	//returns the age as a integer
+	/*
+	 * Returns the age of person
+	 * @return int Returns the age of person
+	 */
 	public int getAge(){
 		return age;
 	}
 	
+	/*
+	 * Returns the gender of person
+	 * @return char Returns the gender of person
+	 */
 	public char getGender(){
 		return gender;
 	}
 	
-	//returns the first and last name as a string
+	/*
+	 * Returns all information of person as a String, is used to 
+	 * @return String Returns all information of person as a String
+	 */
 	@Override
 	public String toString(){
 		return firstName + " " + lastName +", "+age+", "+gender ;

@@ -1,3 +1,7 @@
+/*
+ * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
+ */
+
 package ui;
 
 import java.util.Vector;

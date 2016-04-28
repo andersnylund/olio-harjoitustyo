@@ -1,6 +1,6 @@
-//Anders Nylund w101302
-//Jeremias Snellman w101318
-
+/*
+ * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
+ */
 package data;
 
 import java.util.Vector;
