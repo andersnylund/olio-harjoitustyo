@@ -124,39 +124,22 @@ public class AddTeam
 	
 	public void addMember(Vector<Competitor> competitors)
 	{	
-		char set;
-		
-		while(true)
-		{
-			System.out.println("Add member (Y/N)");
-			set = Lue.merkki();
-			if(set == 'Y'){
-				
-				//Checks if there are any competitors in the competitor vector
-				if(!competitors.isEmpty())
-				{	
-					//lists all the competitors
-					//creates  new participant object and lets the user choose
-					//which competitor to add to the participant object
-					participant = new Participant(view.selectCompetitor(competitors, ""));
-					if(participant == null)
-						return;
-					//adds the participant to the team member vector.
-					team.addMember(participant);
-					System.out.println("Member added.");
-				}
-				else{
-					System.out.print("No competitors found.");
-					break;
-				}
-				
-			}
-			else if(set == 'N'){
-				System.out.println("Team complete.\n");
-				break;
+			//Checks if there are any competitors in the competitor vector
+			if(!competitors.isEmpty())
+			{	
+				//lists all the competitors
+				//creates  new participant object and lets the user choose
+				//which competitor to add to the participant object
+				participant = new Participant(view.selectCompetitor(competitors, ""));
+				if(participant == null)
+					return;
+				//adds the participant to the team member vector.
+				team.addMember(participant);
+				System.out.println("Member added.");
 			}
 			else
-				System.out.println("Wrong character input!");
-		}
+			{
+				System.out.print("No competitors found.");
+			}	
 	}
 }
