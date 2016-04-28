@@ -73,9 +73,9 @@ public class Sport
 	
 
 	/**
-	 * Used for adding a league
-	 * @param league
-	 * @return boolean Returns true if adding a league was successful
+	 * For adding a already created league to the league Vector
+	 * @param league 
+	 * @return Returns true if adding a league was successful
 	 */
 	public boolean addLeague(League league){
 		
@@ -85,9 +85,9 @@ public class Sport
 		return true;
 	}
 	/**
-	 * 
-	 * @param name
-	 * @return boolean Returns true if 
+	 * For making a new league and adding it to the league Vector
+	 * @param name The name of the league to add to the leagues Vector
+	 * @return Returns True if adding was successful
 	 */
 	public boolean addLeague(String name){
 		if(name == null) return false;
@@ -97,8 +97,8 @@ public class Sport
 	}
 	/**
 	 * 
-	 * @param team
-	 * @return
+	 * @param team The team to add to the teams Vector
+	 * @return Returns True if adding was successful
 	 */
 	public boolean addTeam(Team team){
 		if(team == null) return false;
@@ -109,49 +109,70 @@ public class Sport
 	}
 	/**
 	 * To check the size of leagues Vector
-	 * @return int Returns number of leagues
+	 * @return Returns number of leagues
 	 */
 	public int nroOfLeagues() { return leagues.size();}
 	/**
-	 * 
-	 * @param index The 
-	 * @return
+	 * Getter for league in league Vector
+	 * @param index The index of the desired league
+	 * @return Returns the league with index of index parameter
 	 */
-	public League getLeague(int index){ return leagues.get(index);}
+	public League getLeague(int index)
+	{ 
+		return leagues.get(index);
+	}
 	/**
-	 * 
-	 * @return
+	 * Check number of teams
+	 * @return Returns the number of teams
 	 */
-	public int nroOfTeams() { return teams.size();}
+	public int nroOfTeams() 
+	{ 
+		return teams.size();
+	}
 	/**
-	 * 
+	 * Getter for team in team Vector
 	 * @param index
-	 * @return
+	 * @return Returns the team with index of index parameter
 	 */
-	public Team getTeam(int index){ return teams.get(index);}
+	public Team getTeam(int index)
+	{ 
+		return teams.get(index);
+		}
 	/**
-	 * 
-	 * @param name
+	 * Setter for name of sport
+	 * @param name The name of sport
 	 */
-	public void setName(String name){ this.name = name; }
+	public void setName(String name)
+	{ 
+		this.name = name; 
+	}
 	/**
-	 * 
-	 * @return
+	 * Getter for name of sport
+	 * @return Returns name of sport
 	 */
-	public String getName(){ return name; }
+	public String getName()
+	{ 
+		return name; 
+	}
 	/**
-	 * 
-	 * @return
+	 * Checks if sport is a teamsport
+	 * @return Returns true if sport is teamsport, else false
 	 */
-	public boolean ifTeamSport(){return teamSport;}
+	public boolean ifTeamSport()
+	{
+		return teamSport;
+	}
 	/**
-	 * 
-	 * @return
+	 * Checks if sport is a leaguesport
+	 * @return Returns true if sport is leaguesport, else false
 	 */
-	public boolean ifLeagueSport(){return leagueSport;}
+	public boolean ifLeagueSport()
+	{
+		return leagueSport;
+	}
 	/**
-	 * 
-	 * @param competitor
+	 * Makes competitor a participant
+	 * @param competitor The competitor which will be made a participant
 	 */
 	public void addParticipant(Competitor competitor)
 	{
@@ -159,16 +180,16 @@ public class Sport
 		participants.addElement(participant);
 	}
 	/**
-	 * 
-	 * @return
+	 * Getter for the team Vector
+	 * @return Returns the team Vector
 	 */
 	public Vector<Team> getTeamVector()
 	{
 		return teams;
 	}
 	/**
-	 * 
-	 * @return
+	 * Getter for the participant Vector
+	 * @return Returns the participant Vector
 	 */
 	public Vector<Participant> getParticipantsVector()
 	{
@@ -180,18 +201,20 @@ public class Sport
 	 */
 	public int nroOfParticipants(){return participants.size();}
 	/**
-	 * 
-	 * @return
+	 * Getter for the league Vector
+	 * @return Returns the league Vector
 	 */
 	public Vector<League> getLeagueVector()
 	{
 		return leagues;
 	}
 	/**
-	 * 
+	 * Converting sport information to a String
+	 * @return Returns the sport name as String
 	 */
 	@Override
-	public String toString(){
+	public String toString()
+	{
 		return name;
 	}
 	

@@ -77,7 +77,8 @@ public class Participant {
 		return competitors;
 	}
 	/**
-	 * 
+	 * Converting competitor information to a String
+	 * @return String Returns the competitor number and the first and last name as a string and points
 	 */
 	@Override
 	public String toString(){
