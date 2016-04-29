@@ -11,14 +11,15 @@ import uva.*;
 
 
 /**
- * The view class which asks for the names and prints the result
+ * User inteface
+ * @author Anders Nylund w101302, Jeremias Snellman w101318
  */
 public class View
 {
 
 	/**
-	 * Used to print prompt for setting last name
-	 * @return String Returns user input
+	 * Prints prompt for setting last name
+	 * @return Returns user input
 	 */
 	public String askLastname()
 	{
@@ -27,8 +28,8 @@ public class View
 		return last;
 	}
 	/**
-	 * Used to print prompt for setting first name
-	 * @return String Returns user input
+	 * Prints prompt for setting first name
+	 * @return Returns user input
 	 */
 	public String askFirstname()
 	{
@@ -38,8 +39,8 @@ public class View
 	}
 	
 	/**
-	 * Used to print prompt for setting first name
-	 * @return String Returns user input
+	 * Prints prompt for setting score
+	 * @return Returns user input
 	 */
 	public double askScore()
 	{
@@ -48,8 +49,8 @@ public class View
 		return score;
 	}
 	/**
-	 * 
-	 * @return
+	 * Prints prompt for setting age
+	 * @return Returns user input
 	 */
 	public int askAge()
 	{
@@ -58,9 +59,9 @@ public class View
 		return age;
 	}
 	/**
-	 * 
-	 * @return
-	 */
+	 * Prints prompt for setting gender
+	 * @return Returns user input
+	 */ 
 	public int askGender()
 	{
 		System.out.print("Gender (Man = 1, Woman = 2, Other = 3)\n>");
@@ -69,7 +70,7 @@ public class View
 	}
 	
 	/**
-	 * Ask user to either start new competition or load an existing competition.
+	 * Asks user to either start new competition or load an existing competition.
 	 * @return Returns users input (1 or 2)
 	 */
 	public int printStart()
@@ -86,7 +87,7 @@ public class View
 	
 	/**
 	 * Sets name for the created competition and return it
-	 * @return
+	 * @return Returns user input
 	 */
 	public String setCompetitionName()
 	{
@@ -95,8 +96,8 @@ public class View
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Prints the main menu
+	 * @return Returns user input
 	 */
 	public int printMainMenu()
 	{
@@ -110,8 +111,8 @@ public class View
 		return Lue.kluku();
 	}
 	/**
-	 * 
-	 * @return
+	 * Prints prompt for setting name of sport
+	 * @return Returns user input
 	 */
 	public String setSportName()
 	{
@@ -120,8 +121,8 @@ public class View
 		return name;
 	}
 	/**
-	 * 
-	 * @return
+	 * Prints prompt for setting name of team
+	 * @return Returns user input
 	 */
 	public String setTeamName()
 	{
@@ -133,10 +134,10 @@ public class View
 
 
 	/**
-	 * 
-	 * @param competitors
-	 * @param message
-	 * @return
+	 * Prints all competitors saved in program and lets user chose one
+	 * @param competitors Vector of competitors
+	 * @param message Differs from what user decides to do
+	 * @return Returns competitor if found, else null
 	 */
 	public Competitor selectCompetitor(Vector<Competitor> competitors, String message)
 	{	
@@ -149,15 +150,17 @@ public class View
 			System.out.print("Select a competitor " + message + "\n>");
 			int index= Lue.kluku();
 			
-			//checks if the number is bigger than the size of the array.
-			//returns null if true.
+			/**
+			 * checks if the number is bigger than the size of the array. Returns null if true.
+			 */
 			if(index > competitors.size()){
 				System.out.println("Index out of bounds. ");
 				return null;
 			}
 			
-			//Checks if the chosen object is null.
-			//if not, returns the object.
+			/**
+			 * Checks if the chosen object is null. If not, returns the object.
+			 */
 			if(competitors.elementAt(index - 1)!=null)
 			{
 				return competitors.elementAt(index - 1);
@@ -167,9 +170,9 @@ public class View
 		
 	}
 	/**
-	 * 
-	 * @param teams
-	 * @return
+	 * Prints all teams saved in program and lets user chose one
+	 * @param teams Vector of teams
+	 * @return Returns team if found, else null
 	 */
 	public Team selectTeam(Vector<Team> teams)
 	{	
@@ -200,9 +203,9 @@ public class View
 		}
 	}
 	/**
-	 * 
-	 * @param sports
-	 * @return
+	 * Prints all sports saved in program and lets user chose one
+	 * @param sports Vector of sports
+	 * @return Returns sport if found, else null
 	 */
 	public Sport selectSport(Vector<Sport> sports)
 	{	
@@ -232,9 +235,9 @@ public class View
 		}
 	}
 	/**
-	 * 
-	 * @param sport
-	 * @return
+	 * Prints all participants saved in program and lets user chose one
+	 * @param sport The sport where participant is participating
+	 * @return Returns the selected participant
 	 */
 	public Participant selectParticipant(Sport sport)
 	{
@@ -246,16 +249,18 @@ public class View
 			System.out.print("Select a participant\n>");
 			int index = Lue.kluku();
 			
-			//checks if the number is bigger than the size of the array.
-			//returns null if true.
+			/**
+			 * checks if the number is bigger than the size of the array. Returns null if true.
+			 */
 			if(index > sport.getParticipantsVector().size())
 			{
 				System.out.println("Index out of bounds. ");
 				return null;
 			}
 			
-			//Checks if the chosen object is null.
-			//if not, returns the object.
+			/**
+			 * Checks if the chosen object is null. If not, returns the object.
+			 */
 			if(sport.getParticipantsVector().elementAt(index - 1)!= null)
 			{
 				return sport.getParticipantsVector().elementAt(index - 1);
@@ -264,9 +269,9 @@ public class View
 		}
 	}
 	/**
-	 * 
-	 * @param sport
-	 * @return
+	 * Lists the participants in a sport
+	 * @param sport The sport of which participants to list
+	 * @return Returns true if participants found, else false
 	 */
 	public boolean listSportandParticipants(Sport sport)
 	{
@@ -287,9 +292,9 @@ public class View
 		return true;
 	}
 	/**
-	 * 
-	 * @param competitors
-	 * @return
+	 * Lists all competitors in program
+	 * @param competitors Vector of competitors
+	 * @return Returns true if competitors found, else false
 	 */
 	public boolean listCompetitors(Vector<Competitor> competitors)
 	{	
@@ -306,9 +311,9 @@ public class View
 		return true;
 	}
 	/**
-	 * 
-	 * @param teams
-	 * @return
+	 * Lists all teams in program
+	 * @param teams Vector of teams
+	 * @return Returns true if teams found, else false
 	 */
 	public boolean listTeams(Vector<Team> teams)
 	{
@@ -325,9 +330,9 @@ public class View
 		return true;
 	}
 	/**
-	 * 
-	 * @param sport
-	 * @return
+	 * Lists teams in a specific sport
+	 * @param sport The sport which teams to list
+	 * @return Returns true if teams found, else false
 	 */
 	public boolean listTeams(Sport sport)
 	{
@@ -345,8 +350,8 @@ public class View
 	}
 	
 	/**
-	 * Prints a team
-	 * @param team
+	 * Lists a team and its members
+	 * @param team The team which member to be listed
 	 */
 	public void listTeamAndMembers(Team team)
 	{
@@ -360,9 +365,9 @@ public class View
 		System.out.println();
 	}	
 	/**
-	 * 
-	 * @param sports
-	 * @return
+	 * List all sports in program
+	 * @param sports Vector of sports
+	 * @return Returns true if sports found, else false
 	 */
 	public boolean listSports(Vector<Sport> sports)
 	{	

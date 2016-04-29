@@ -1,8 +1,11 @@
 /**
- * 	User interface 
+ * 	User interface for printing results
  * 	@author	Anders Nylund w101302, Jeremias Snellman w101318
  */
 
+/**
+ * Collection of user interface classes
+ */
 package ui;
 
 import java.util.Vector;
@@ -10,18 +13,31 @@ import java.util.Vector;
 import data.*;
 
 /**
- * 
+ * Used to show and save the results saved in program
  * @author Anders Nylund w101302, Jeremias Snellman w101318
  *
  */
 public class ShowAndSave 
 {
-	
+	/**
+	 * 
+	 */
 	private Sport sport;
+	/**
+	 * 
+	 */
 	private Team team;
+	/**
+	 * 
+	 */
 	private League league;
+	/**
+	 * 
+	 */
 	private Competitor competitor;
-	
+	/**
+	 * 
+	 */
 	private View view = new View();
 	
 	

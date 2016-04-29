@@ -1,8 +1,18 @@
+/**
+ * 
+ */
+
 package uva;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+/**
+ * For reading input from user
+ * @author Johanna Aalto, Hannu Niinimäki
+ * Translated by Anders Nylund, w101302
+ *
+ */
 public class Lue
 {
   static BufferedReader stdin =
@@ -22,7 +32,7 @@ public class Lue
       }
 	  catch (Exception e)
 	  {
-        System.out.println ("Virhe rivin lukemisessa. Anna uusi!");
+		System.out.println ("Error reading the line. Try again!");
         ok = false;
       }
     }
@@ -45,7 +55,7 @@ public class Lue
       }
 	  catch (Exception e)
 	  {
-        System.out.println ("Kelvoton kokonaisluku. Anna uusi!");
+		System.out.println ("Invalid integer. Try again!");
         ok = false;
       }
     }
@@ -68,7 +78,7 @@ public class Lue
       }
 	  catch (Exception e)
 	  {
-        System.out.println ("Kelvoton desimaaliluku. Anna uusi!");
+		System.out.println("Invalid decimalnumber. Try again!");
         ok = false;
       }
     }
