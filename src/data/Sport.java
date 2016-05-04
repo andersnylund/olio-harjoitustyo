@@ -179,6 +179,21 @@ public class Sport
 		Participant participant = new Participant(competitor);
 		participants.addElement(participant);
 	}
+	
+	/**
+	 * Checking if a competitor is found in the paricipant-vector
+	 * @param competitor The competitor to check
+	 * @return Returns true if participant found in participant-vector, else false
+	 */
+	public boolean checkIfParticipant(Competitor competitor)
+	{
+		for(int i = 0; i< participants.size(); i++)
+		{
+			if(participants.elementAt(i).getNumber() == competitor.getNumber())
+				return true;
+		}
+			return false;
+	}
 	/**
 	 * Getter for the team Vector
 	 * @return Returns the team Vector

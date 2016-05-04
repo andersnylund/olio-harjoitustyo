@@ -60,7 +60,8 @@ public class AddCompetitor
 				editCompetitor(competitors);
 				break;
 			}
-			else if(set == '3'){
+			else if(set == '3')
+			{
 				break;
 			}
 			else
@@ -91,11 +92,11 @@ public class AddCompetitor
 	 * For editing a competitor already in competitors Vector
 	 * @param competitors Vector of competitors
 	 */
-	public void editCompetitor(Vector<Competitor> competitors)
+	public boolean editCompetitor(Vector<Competitor> competitors)
 	{
 		competitor = view.selectCompetitor(competitors, "to edit");
 		if(competitor == null)
-			return;
+			return true;
 		do
 		{
 			competitor.setLastname(view.askLastname());
@@ -103,5 +104,6 @@ public class AddCompetitor
 		}while(!(competitor.checkName(competitor.getLastname())) && !(competitor.checkName(competitor.getFirstname())));
 		competitor.setAge(view.askAge());
 		competitor.setGender(view.askGender());
+		return false;
 	}
 }

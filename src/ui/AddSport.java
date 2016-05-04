@@ -99,9 +99,9 @@ public class AddSport
 		sports.addElement(new Sport(teamSport, false, name)); 
 	}
 	/**
-	 * 
-	 * @param sports
-	 * @param competitors
+	 * For adding a participant to a sport
+	 * @param sports The sports vector, all sports saved in program
+	 * @param competitors The competitors vector, all competitors saved in program
 	 */
 	public void addParticipantsToSport(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
@@ -127,22 +127,36 @@ public class AddSport
 			/**
 			 * add a participant to the sport
 			 */
-			if(competitor!= null){
-				sport.addParticipant(competitor);
+			if(competitor!= null)
+			{
+				if(sport.checkIfParticipant(competitor))
+				{
+					System.out.println("Competitor already participating!");
+					break;
+				}
+				else
+				{
+					sport.addParticipant(competitor);
+					System.out.println("Participant added!");
+				}
 			}
 
 			break;
 		}
 	}
 	/**
-	 * 
-	 * @return
+	 * Getter for the sport
+	 * @return Returns an reference to the sport
 	 */
 	public Sport getSport()
 	{
 		return sport;
 	}
 	
+	/**
+	 * For deleting a sport from the program
+	 * @param sports Vector of all the sports saved in program
+	 */
 	public void deleteSport(Vector<Sport> sports){
 		sport = view.selectSport(sports);
 		if(sport!=null){
