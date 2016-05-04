@@ -203,6 +203,25 @@ public class View
 			System.out.println("Team not found. Choose an existing team.");
 		}
 	}
+	
+	public Participant selectTeamMember(Team team){
+		if(!listMembers(team))
+			return null;
+
+		System.out.print("Select a team member\n> ");
+		int index= Lue.kluku();
+			
+		/**
+		* checks if the number is bigger than the size of the array. Returns null if true.
+		*/
+		if((index > team.nroOfMembers()) || (index < 0)){
+			System.out.println("Index out of bounds. ");
+			return null;
+		}
+			
+		return team.getMember(index); 
+
+	}
 	/**
 	 * Prints all sports saved in program and lets user chose one
 	 * @param sports Vector of sports
@@ -353,13 +372,31 @@ public class View
 		System.out.println();
 		return true;
 	}
+	/**
+	 * Lists a team and its members
+	 * @param team The team which member to be listed
+	 */
+	public boolean listMembers(Team team){
+		if(team == null)
+			return false;
+		System.out.println("Team: " + team.getName());
+		System.out.println("\tTeam members:");
+		
+		for(int i = 0; i < team.nroOfMembers(); i++){
+			System.out.println("\t" + team.getMember(i).toString());
+		}
+		System.out.println();
+		return true;
+	}
 	
 	/**
 	 * Lists a team and its members
 	 * @param team The team which member to be listed
 	 */
-	public void listTeamAndMembers(Team team)
-	{
+	public boolean listTeamAndMembers(Team team)
+	{	
+		if(team == null)
+			return false;
 		System.out.println("\tTeam: " + team.getName());
 		System.out.println("\tScore: " + String.format("%.1f", team.getScoreTeam()));
 		System.out.println("\t\tTeam members:");
@@ -368,6 +405,7 @@ public class View
 			System.out.println("\t\t" + team.getMember(i).toString());
 		}
 		System.out.println();
+		return true;
 	}	
 	/**
 	 * List all sports in program

@@ -31,13 +31,13 @@ public class AddTeam
 		while(true)
 		{
 			//Asks the user if he wants to add a team or members to a team
-			System.out.println("\n1. Add team\n2. Add members to a team\n3. Delete team\n4. Back to main menu");
+			System.out.println("\n1. Add team\n2. Edit team members\n3. Delete team\n4. Back to main menu");
 			int index = Lue.kluku();
 			
 			switch(index)
 			{
 			case 1: addTeam(sports, competitors); break;
-			case 2: addTeamMember(sports, competitors); break;
+			case 2: editTeamMembers(sports, competitors); break;
 			case 3: deleteTeam(sports);
 			case 4: return true;
 			default: System.out.println("Wrong integer input!");
@@ -120,10 +120,46 @@ public class AddTeam
 		return true;
 	}
 	/**
+	 * Sub-menu for adding or deleting team members.
+	 * @param sports
+	 * @param competitors
+	 */
+	public void editTeamMembers(Vector<Sport> sports, Vector<Competitor> competitors){
+		System.out.println("1. Add member\n2. Delete member");
+		int a = Lue.kluku();
+		if(a == 1){
+			addTeamMember(sports, competitors);
+		}
+		else if(a == 2){
+			deleteTeamMember(sports);
+		}
+		else
+			System.out.println("Wrong integer input");
+	}
+	/**
+	 * Deletes a selected team member.
+	 * @param sports
+	 */
+	public void deleteTeamMember(Vector<Sport> sports){
+		sport = view.selectSport(sports);
+		if(sport != null){
+			team = view.selectTeam(sport.getTeamVector());
+			if(team!= null){
+				participant = view.selectTeamMember(team);
+				if(participant != null){
+					if(team.deleteMember(participant))
+						System.out.println("Team member deleted: " + participant.toString());
+					else
+						System.out.println("Couldn't delete the selected member");
+				}
+			}
+		}
+	}
+	/**
 	 * 
 	 * @param sports
 	 * @param competitors
-	 * @return
+	 * @return 
 	 */
 	public boolean addTeamMember(Vector<Sport> sports, Vector<Competitor> competitors)
 	{
