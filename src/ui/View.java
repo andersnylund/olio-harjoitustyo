@@ -294,14 +294,16 @@ public class View
 	 * @return Returns true if participants found, else false
 	 */
 	public boolean listSportandParticipants(Sport sport)
-	{
+	{	
+		if(sport ==null)
+			return false;
+		System.out.println("Sport: " + sport.getName());
 		if(sport.getParticipantsVector().isEmpty())
 		{
-			System.out.println("No participants");
 			return false;
 		}	
 		
-		System.out.println("Sport: " + sport.getName());
+		
 		System.out.println("\tParticipants: ");
 		for(int i = 0; i<sport.getParticipantsVector().size();i++)
 		{
