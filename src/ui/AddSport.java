@@ -143,6 +143,10 @@ public class AddSport
 		return sport;
 	}
 	
+	/**
+	 * Deletes the selected sport.
+	 * @param sports A vector with all the sport objects for choosing the sport to delete.
+	 */
 	public void deleteSport(Vector<Sport> sports){
 		sport = view.selectSport(sports);
 		if(sport!=null){
