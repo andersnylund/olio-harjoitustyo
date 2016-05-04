@@ -38,7 +38,7 @@ public class AddCompetitor
 		System.out.println("\n1. Add competitor or official");
 		System.out.println("2. Edit competitor or official");
 		System.out.println("3. Back to main menu");
-		System.out.print(">");
+		System.out.print("> ");
 		
 		char set;
 		while(true)
@@ -64,7 +64,7 @@ public class AddCompetitor
 				break;
 			}
 			else
-				System.out.println("Wrong character input");
+				System.out.println("Wrong integer input");
 			}
 		/**
 		 * returns the vector of competitors to the Main-class

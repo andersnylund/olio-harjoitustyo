@@ -32,7 +32,7 @@ public class AddPoints
 			System.out.println("1. Add/edit an individuals points");
 			System.out.println("2. Add/edit a teams points");
 			System.out.println("3. Back to main menu");
-			System.out.print(">");
+			System.out.print("> ");
 			
 			int set = Lue.kluku();
 			
@@ -46,7 +46,7 @@ public class AddPoints
 			case 3:
 				return true;
 			default:
-				System.out.println("Wrong option. Choose a valid option.");
+				System.out.println("Wrong integer input!");
 			}
 		}
 	}

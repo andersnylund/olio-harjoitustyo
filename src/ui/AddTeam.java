@@ -39,7 +39,7 @@ public class AddTeam
 			case 1: addTeam(sports, competitors); break;
 			case 2: addTeamMember(sports, competitors); break;
 			case 3: return true;
-			default: System.out.println("Wrong option. Choose an option between 1 and 3.");
+			default: System.out.println("Wrong integer input!");
 			}
 		}
 	}
@@ -68,7 +68,7 @@ public class AddTeam
 		//lets the user select a sport to add a team to.
 		if(!sports.isEmpty())
 			{
-			System.out.print("Select sport to add team to\n>");
+			System.out.print("Select sport to add team to\n> ");
 			number = Lue.kluku();
 			}
 		else
@@ -91,23 +91,26 @@ public class AddTeam
 			
 			sports.elementAt(number -1).addTeam(team);
 			
-			char set;
+			int set;
 			
 			//Lets the user add a member if he user wants to 
-			while(true){
-				System.out.println("Add member (Y/N)");
-				set = Lue.merkki();
-				if(set == 'Y'){
+			while(true)
+			{
+				System.out.print("Add member\n1. Yes\n2. No\n> ");
+				set = Lue.kluku();
+				if(set == 1)
+				{
 					if(!addTeamMember(team,competitors))
 						break;
 				}
-				else if(set == 'N'){
+				else if(set == 2)
+				{
 					System.out.println("Team complete.\n");
 					break;
 				}
 				else
-					System.out.println("Wrong character input!");
-				}
+					System.out.println("Wrong integer input!");
+			}
 				
 		}
 		else
