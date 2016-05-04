@@ -4,6 +4,11 @@
 package data;
 import java.util.*;
 
+/**
+ * 
+ * @author Anders 
+ *
+ */
 public class League 
 {
 	/**

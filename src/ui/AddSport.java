@@ -59,7 +59,7 @@ public class AddSport
 				break;
 			}
 			else
-				System.out.println("Wrong character input!");
+				System.out.println("Wrong integer input!");
 		}
 	}
 	/**
@@ -68,30 +68,30 @@ public class AddSport
 	 */
 	public void addSport(Vector<Sport> sports)
 	{
-		char set;
+		int set;
 		/**
 		 * Ask the user to say if the new sport is a team sport
 		 */
-		System.out.println("Is it a team sport? (Y/N)");
+		System.out.print("Is it a team sport?\n1. Yes\n2. No\n> ");
 	
 		/**
 		 * waits for the user to insert either Y or N 
 		 */
 		while(true)
 		{
-			set = Lue.merkki();
-			if(set == 'Y')
+			set = Lue.kluku();
+			if(set == 1)
 			{
 				teamSport = true;
 				break;
 			}
-			else if(set == 'N')
+			else if(set == 2)
 			{
 				teamSport = false;
 				break;
 			}
 			else
-				System.out.println("Wrong character input");
+				System.out.println("Wrong integer input");
 		}
 		
 		String name = view.setSportName();

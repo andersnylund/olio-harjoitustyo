@@ -91,7 +91,7 @@ public class View
 	 */
 	public String setCompetitionName()
 	{
-		System.out.print("Enter name of competition\n>");
+		System.out.print("Enter name of competition\n> ");
 		return Lue.rivi();
 	}
 	
@@ -116,7 +116,7 @@ public class View
 	 */
 	public String setSportName()
 	{
-		System.out.print("Name of the sport\n>");
+		System.out.print("Name of the sport\n> ");
 		String name = Lue.rivi();
 		return name;
 	}
@@ -126,7 +126,7 @@ public class View
 	 */
 	public String setTeamName()
 	{
-		System.out.print("Name of the team\n>");
+		System.out.print("Name of the team\n> ");
 		String name = Lue.rivi();
 		return name;
 	}
@@ -147,7 +147,7 @@ public class View
 		
 		while(true)
 		{
-			System.out.print("Select a competitor " + message + "\n>");
+			System.out.print("Select a competitor " + message + "\n> ");
 			int index= Lue.kluku();
 			
 			/**
@@ -183,7 +183,7 @@ public class View
 		
 		while(true)
 		{
-			System.out.print("Select a team\n>");
+			System.out.print("Select a team\n> ");
 			int index = Lue.kluku();
 			
 			//checks if the number is bigger than the size of the array.
@@ -215,7 +215,7 @@ public class View
 		
 		while (true)
 		{	
-			System.out.print("Select a sport\n>");
+			System.out.print("Select a sport\n> ");
 			int index = Lue.kluku();
 			
 			//checks if the number is bigger than the size of the array.
@@ -317,17 +317,21 @@ public class View
 	 */
 	public boolean listTeams(Vector<Team> teams)
 	{
-		if(teams.isEmpty()){
+		if(teams.isEmpty())
+		{
 			System.out.println("No teams found.");
 			return false;
 		}
-		System.out.println("List of all teams: ");
-		for(int i = 0; i < teams.size(); i++)
+		else
 		{
-			System.out.println((i + 1) + ": " + teams.elementAt(i).getName());
+			System.out.println("List of all teams: ");
+			for(int i = 0; i < teams.size(); i++)
+			{
+				System.out.println((i + 1) + ": " + teams.elementAt(i).getName());
+			}
+			System.out.println();
+			return true;
 		}
-		System.out.println();
-		return true;
 	}
 	/**
 	 * Lists teams in a specific sport
