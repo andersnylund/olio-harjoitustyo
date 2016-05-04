@@ -142,4 +142,14 @@ public class AddSport
 	{
 		return sport;
 	}
+	
+	public void deleteSport(Vector<Sport> sports){
+		sport = view.selectSport(sports);
+		if(sport!=null){
+			if(sports.remove(sport))
+				System.out.println("Sport deleted: " + sport.getName());
+			else
+				System.out.println("Couldn't delete the sport");
+		}
+	}
 }

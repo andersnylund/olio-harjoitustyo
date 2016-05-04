@@ -62,7 +62,11 @@ public class AddPoints
 			System.out.println("No sports found. Add a sport and try again");
 			return false;
 		}	
-		view.selectParticipant(view.selectSport(sports)).setScore(view.askScore());
+		Participant part = view.selectParticipant(view.selectSport(sports));
+		if(part != null)
+			part.setScore(view.askScore());
+		else
+			System.out.println("Couldn't set the score");
 		return true;
 	}
 	/**
@@ -77,7 +81,11 @@ public class AddPoints
 			System.out.println("No team found. Add a team and try again");
 			return false;
 		}
-		view.selectTeam(view.selectSport(sports).getTeamVector()).setScoreTeam(view.askScore());
+		Team team = view.selectTeam(view.selectSport(sports).getTeamVector());
+		if(team!=null)
+			team.setScoreTeam(view.askScore());
+		else
+			System.out.println("The selected sport is not a team sport");
 		return true;
 	}
 	
