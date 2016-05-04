@@ -177,7 +177,8 @@ public class View
 	public Team selectTeam(Vector<Team> teams)
 	{	
 		//lists all teams and returns null if no teams were found.
-		if(!listTeams(teams)){
+		if(!listTeams(teams))
+		{
 			return null;
 		}
 		

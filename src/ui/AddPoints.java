@@ -51,7 +51,7 @@ public class AddPoints
 		}
 	}
 	/**
-	 * 
+	 * For adding points to an individual competitor
 	 * @param sports Vector of sports
 	 * @return True if adding points was successful, false if no sports were found
 	 */
@@ -66,7 +66,7 @@ public class AddPoints
 		return true;
 	}
 	/**
-	 * 
+	 * For adding points to a team
 	 * @param sports Vector of sports
 	 * @return True if adding was successful, false if no teams were found
 	 */
