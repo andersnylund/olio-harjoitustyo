@@ -211,9 +211,14 @@ public class AddTeam
 				participant = new Participant(view.selectCompetitor(competitors, ""));
 				if(participant == null)
 					return;
-				//adds the participant to the team member vector.
-				team.addMember(participant);
-				System.out.println("Member added.");
+				
+				if(team.checkIfMember(participant))
+					System.out.println("The selected person is already a member");
+				else{
+					//adds the participant to the team member vector.
+					team.addMember(participant);
+					System.out.println("Member added.");
+				}
 			}
 			else
 			{

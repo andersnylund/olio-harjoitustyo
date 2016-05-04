@@ -54,6 +54,7 @@ public class Main
 				COMPETITION_NAME = mainView.setCompetitionName();
 				break;
 			case 2:
+				System.out.println("\n--Load fuction is not implemented--\nCreating new competition");
 				COMPETITION_NAME = mainView.setCompetitionName();
 				break;
 			default:
@@ -102,6 +103,7 @@ public class Main
 			 */
 			case 5:
 				showAndSave.printAllInfo(sports);
+				System.out.println("\n--Save function is not implemented--");
 			
 				break;
 			/**

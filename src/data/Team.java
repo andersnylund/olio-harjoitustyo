@@ -62,6 +62,14 @@ public class Team {
 		
 		return -1;
 	}
+	
+	public boolean checkIfMember(Participant participant){
+		for(int i = 0; i < teamMembers.size(); i++){
+			if(teamMembers.elementAt(i).getNumber() == participant.getNumber())
+				return true;
+		}
+		return false;
+	}
 	/**
 	 * Setter for the team score
 	 * @param score The score to be set ofr the team
