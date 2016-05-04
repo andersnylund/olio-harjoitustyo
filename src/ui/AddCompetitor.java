@@ -40,14 +40,14 @@ public class AddCompetitor
 		System.out.println("3. Back to main menu");
 		System.out.print("> ");
 		
-		char set;
+		int set;
 		while(true)
 		{
-			set = Lue.merkki();
+			set = Lue.kluku();
 			/**
 			 * adding new competitor to the "competitor-vector" in Main-class
 			 */
-			if(set == '1')
+			if(set == 1)
 			{
 				addCompetitor(competitors);
 				break;
@@ -55,12 +55,12 @@ public class AddCompetitor
 			/**
 			 * editing competitor in the "competitor-vector" in Main-class
 			 */
-			else if(set == '2')
+			else if(set == 2)
 			{
 				editCompetitor(competitors);
 				break;
 			}
-			else if(set == '3')
+			else if(set == 3)
 			{
 				break;
 			}

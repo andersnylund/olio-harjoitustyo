@@ -128,7 +128,10 @@ public class AddSport
 			 * add a participant to the sport
 			 */
 			if(competitor!= null){
-				sport.addParticipant(competitor);
+				if(sport.checkIfParticipant(competitor))
+					System.out.println("Competitor already participating in the sport");
+				else	
+					sport.addParticipant(competitor);
 			}
 
 			break;
